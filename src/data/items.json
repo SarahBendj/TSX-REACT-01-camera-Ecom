@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "price": 29.99,
+      "name": "CanonS89",
+      "description": "This is the description for Product 1. It is a great product for your needs.",
+      "img": "/images/A.jpeg"
+    },
+    {
+      "id": 2,
+      "price": 19.95,
+      "name": "Ricoh52",
+      "description": "Product 2 is a versatile item suitable for various uses.",
+      "img": "/images/B.webp"
+    },
+    {
+      "id": 3,
+      "price": 39.99,
+      "name": "KoniI09",
+      "description": "Product 3 is a high-quality and durable option.",
+      "img": "/images/C.webp"
+    },
+    {
+      "id": 4,
+      "price": 149.99,
+      "name": "SonyXP",
+      "description": "Product 4 is the latest addition to our product lineup.",
+      "img": "/images/D.webp"
+    },
+    {
+      "id": 5,
+      "price": 150.99,
+      "name": "Koni02",
+      "description": "Product 3 is a high-quality and durable option.",
+      "img": "/images/C.webp"
+    },
+    {
+      "id": 6,
+      "price": 210.99,
+      "name": "SonyJ",
+      "description": "Product 4 is the latest addition to our product lineup.",
+      "img": "/images/D.webp"
+    }
+  ]
+  

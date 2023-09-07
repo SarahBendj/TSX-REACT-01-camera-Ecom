@@ -1,0 +1,49 @@
+@use '/src/Style/stl.scss';
+
+.App {
+  font-family: 'Dancing Script', cursive;
+}
+
+//*ABOUT PAGE 
+//*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'ABOUT' USES
+.vote-section-item {
+  margin-bottom: 2rem;
+
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+}
+
+.about-container  {
+  height: 400px !important;
+
+ 
+  
+}
+.blog-scroller {
+  height: 95vh;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 12px; 
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #842E1B; /* Set the color of the scrollbar thumb */
+    border-radius: 8px; /* Round the corners of the thumb */
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background-color: #8c5c51; /* Change the color on hover */
+  }
+
+}
+///**********************************************************/
+/// //*STORE PAGE 
+//*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'STORE' USES
+
+///**********************************************************/
+/// //*HOME PAGE 
+//*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'HOME' USES
