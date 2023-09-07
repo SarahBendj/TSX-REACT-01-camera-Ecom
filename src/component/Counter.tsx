@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 
 
 const Counter = ( {id }:number ) => {
-  console.log(id)
+
   //*CONTEXT SHOPPING STARTS
 
   const {

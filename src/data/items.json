@@ -32,14 +32,116 @@
       "price": 150.99,
       "name": "Koni02",
       "description": "Product 3 is a high-quality and durable option.",
-      "img": "/images/C.webp"
+      "img": "/images/J.jpeg"
     },
     {
       "id": 6,
       "price": 210.99,
       "name": "SonyJ",
       "description": "Product 4 is the latest addition to our product lineup.",
-      "img": "/images/D.webp"
-    }
-  ]
+      "img": "/images/I.webp"
+    },
+    
+      {
+        "id": 7,
+        "price": 199.99,
+        "name": "NikonZ1",
+        "description": "The NikonZ1 camera is a versatile choice for photography enthusiasts.",
+        "img": "/images/E.webp"
+      },
+      {
+        "id": 8,
+        "price": 129.95,
+        "name": "PanasonicLX2",
+        "description": "The PanasonicLX2 is a compact and budget-friendly camera option.",
+        "img": "/images/F.webp"
+      },
+      {
+        "id": 9,
+        "price": 349.99,
+        "name": "FujifilmX3",
+        "description": "The FujifilmX3 camera offers high-quality image capture and advanced features.",
+        "img": "/images/G.jpeg"
+      },
+      {
+        "id": 10,
+        "price": 279.99,
+        "name": "CanonEOS1",
+        "description": "Capture stunning moments with the CanonEOS1, a professional-grade camera.",
+        "img": "/images/H.webp"
+      },
+      {
+        "id": 11,
+        "price": 199.95,
+        "name": "SonyAlpha5",
+        "description": "The SonyAlpha5 is perfect for both photography and videography.",
+        "img": "/images/I.webp"
+      },
+      {
+        "id": 12,
+        "price": 429.99,
+        "name": "OlympusOMD3",
+        "description": "The OlympusOMD3 offers exceptional image quality and durability.",
+        "img": "/images/J.jpeg"
+      },
+      {
+        "id": 13,
+        "price": 149.99,
+        "name": "NikonD3500",
+        "description": "Begin your photography journey with the NikonD3500, an entry-level DSLR.",
+        "img": "/images/K.webp"
+      },
+      {
+        "id": 14,
+        "price": 799.99,
+        "name": "Canon5DMarkIV",
+        "description": "The Canon5DMarkIV is a professional's choice for high-resolution photography.",
+        "img": "/images/A.jpeg"
+      },
+      {
+        "id": 15,
+        "price": 599.95,
+        "name": "PanasonicGH5",
+        "description": "Shoot in 4K with the PanasonicGH5, a top-notch mirrorless camera.",
+        "img": "/images/E.webp"
+      },
+      {
+        "id": 16,
+        "price": 249.99,
+        "name": "SonyRX100",
+        "description": "The SonyRX100 is a pocket-sized camera with impressive features.",
+        "img": "/images/F.webp"
+      },
+      {
+        "id": 17,
+        "price": 299.99,
+        "name": "FujifilmXT4",
+        "description": "The FujifilmXT4 is a mirrorless camera with advanced video capabilities.",
+        "img": "/images/O.jpg"
+      },
+      {
+        "id": 18,
+        "price": 699.95,
+        "name": "Canon6D",
+        "description": "The Canon6D offers full-frame goodness for serious photographers.",
+        "img": "/images/P.jpg"
+      },
+      {
+        "id": 19,
+        "price": 169.99,
+        "name": "NikonCoolpix",
+        "description": "Capture memories with ease using the NikonCoolpix compact camera.",
+        "img": "/images/Q.jpg"
+      },
+      {
+        "id": 20,
+        "price": 349.99,
+        "name": "SonyA7III",
+        "description": "The SonyA7III is a versatile mirrorless camera for enthusiasts and professionals.",
+        "img": "/images/R.jpg"
+      }
+    ]
+    
+
+  
   

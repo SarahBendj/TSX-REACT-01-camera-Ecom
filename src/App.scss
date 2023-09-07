@@ -44,6 +44,53 @@
 /// //*STORE PAGE 
 //*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'STORE' USES
 
-///**********************************************************/
+
+.card-shape  {
+  width: 20vw;
+  height: auto;
+  margin-bottom: 2rem;
+}
+
+.search-bar-form {
+  width: 50vw;
+  background-color: #842E1B;
+  padding: 1rem;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  &:hover  {
+    opacity: 0.9;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+}
+
+
+
+/* Define the styles for the range input */
+.custom-range {
+ padding-top: 1rem;
+  background-color: #ac4c4c;
+
+
+/* Define the styles for the slider (the thumb) */
+&::-webkit-slider-thumb {
+  /* Set the color of the slider thumb */
+  background-color: #bb00ff;
+
+}
+/* For Firefox */
+&::-moz-range-thumb {
+  background-color: #ff00c8;
+}
+
+/* For IE and Edge */
+&::-ms-thumb {
+  background-color: #eeff00;
+}
+}
+
+ ///**********************************************************/
 /// //*HOME PAGE 
 //*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'HOME' USES

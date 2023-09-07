@@ -4,40 +4,75 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { StoreItemProps } from "./StoreItem";
 
-const  SearchBar = ({ StoreItems, setFiltredItems }) => {
-  const [searchClue, setSearchClue] = useState<string | null>(null);
+const SearchBar = ({ StoreItems, setFiltredItems } :{ StoreItems: StoreItemProps[], setFiltredItems:( item : StoreItemProps[]) => void}) => {
+
+  const [searchClue, setSearchClue] = useState<string | null>();
+  const [ rangeValueStart , setRangeValueStart ]= useState<number>(0);
+  const [ rangeValueEnd , setRangeValueEnd ]= useState<number>(500);
 
 
+
+  const handleRangeValue = ( event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>
+  ) :number =>   { 
+    const value: number = parseInt(event.currentTarget.value ,10);
+    console.log(value)
+    setRangeValueStart(value)
+    setRangeValueEnd( value + 50)
+
+  }
 
   const HasMatchingItems = (
     event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>
   ) => {
-    const value: string | null = event.target.value;
-    if (value) {
-      setSearchClue(value); 
 
-     const filtredItems = StoreItems.filter((item: StoreItemProps) => {
-        if (item.name === (value)) {
-          return item ;
+    const value: string | null = event.currentTarget.value.toLowerCase()
+
+      setSearchClue(value);
+
+      const filtredItems: StoreItemProps[] = StoreItems.filter(
+        (item: StoreItemProps) => {
+         return  item.name.toLowerCase().includes(value);
         }
-        
-        setFiltredItems(filtredItems)
-       
-      });
-    } else {
-      return setFiltredItems(StoreItems)
+      );
+   
+        setFiltredItems(filtredItems);
+      
+    if(!value) {
+      setSearchClue('')
+      return setFiltredItems(StoreItems);
+
     }
-  };
-  
+      
+    }
+
+    const resetValues = (
+    ) => {
+      setFiltredItems(StoreItems);
+      setRangeValueStart(0)
+      setRangeValueEnd(500)
+      setSearchClue('')
+    }
+
+
 
   return (
     <Container
       className="d-flex flex-row justify-content-center "
       style={{ marginBottom: "4rem" }}
     >
-      <Row>
+      <Row  className="search-bar">
         <Col sm={4}>
-          <Form className="d-flex">
+          <Form className="d-flex  search-bar-form ">
+            <div  className="bg-white border-0 " style={{ color: "#fff", borderRadius: "50px"  , margin: 'auto'}} className="range">
+          <label htmlFor="rangeID" className="range-label"></label>
+            <input 
+             className="custom-range" 
+             onChange={handleRangeValue} 
+             type="range"
+              id="rangeID"
+               min='25' max='500' 
+               /> { rangeValueStart} $ - {rangeValueEnd}
+            </div>
             <input
               style={{ color: "#842E1B", paddingLeft: "2rem" }}
               type="search"
@@ -55,11 +90,12 @@ const  SearchBar = ({ StoreItems, setFiltredItems }) => {
             >
               <FontAwesomeIcon icon={faSearch} style={{ color: "#fff" }} />
             </Button>
+            <Button className="bg-white border-0 " style={{ color: "#842E1B", borderRadius: "50px" }} onClick={resetValues}> Reset </Button>
           </Form>
         </Col>
       </Row>
     </Container>
   );
-}
+};
 
 export default SearchBar;
