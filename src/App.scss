@@ -41,14 +41,93 @@
 
 }
 ///**********************************************************/
+/// //*HOME PAGE 
+//*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'STORE' USES
+
+.SECTION{
+  position: relative;
+  background : white;
+   padding: 1rem ;
+   border-top: 4px solid #DAA520 ;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+ 
+  &-title {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    color: white;
+    padding: 0rem 1rem;
+    background-color: #DAA520;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+  }
+  &-content {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+  
+}
+
+
+.blog-pictures{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+   width: 100%;
+   height: 100%;
+}
+
+
+
+.best-seller-items{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+
+}
+
+
+.sold-off {
+position: absolute;
+ background: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(255, 0, 0, 0));
+ height: 100%;
+  width: 100%;
+  z-index: 20;
+  
+
+}
+///**********************************************************/
 /// //*STORE PAGE 
 //*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'STORE' USES
 
 
 .card-shape  {
+
   width: 20vw;
   height: auto;
   margin-bottom: 2rem;
+  
+  &:hover {
+    scale: 1.05;
+    opacity: 0.85;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+///**********************************************************/
+/// //*SEARCH BAR COMPONONENT
+//*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'STORE' USES
+
+.visible {
+  color: #842E1B;
+  text-align: center;
+}
+.hidden {
+  display: none;
 }
 
 .search-bar-form {
@@ -94,3 +173,70 @@
  ///**********************************************************/
 /// //*HOME PAGE 
 //*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'HOME' USES
+//*MODAL STYLE
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60vw;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Container */
+.modal-container {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  max-width: 70vw;
+  width: 400px;
+}
+
+/* Modal Header */
+.modal-heading {
+  font-family: stl.$fontArt;
+  color: rgb(92, 46, 16);
+  font-size: 5rem;
+  
+}
+.modal-img {
+  max-width: 100%;
+}
+.modal-content-header {
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  font-family: stl.$fontArt;
+  
+
+}
+.modal-content {
+  padding:1rem;
+}
+/* Close Button */
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+// .open-modal-button {
+//   position: absolute;
+//   font-size: 5rem;
+//   background-color: #842E1B;
+
+// }
+
+.modal-content {
+  padding: 16px;
+}
+
+
+.modal-footer {
+  padding: 16px;
+  border-top: 1px solid #ccc;
+  text-align: right;
+}

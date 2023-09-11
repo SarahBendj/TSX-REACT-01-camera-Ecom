@@ -1,21 +1,21 @@
 [
     {
       "id": 1,
-      "price": 29.99,
+      "price": 129.99,
       "name": "CanonS89",
       "description": "This is the description for Product 1. It is a great product for your needs.",
       "img": "/images/A.jpeg"
     },
     {
       "id": 2,
-      "price": 19.95,
+      "price": 219.95,
       "name": "Ricoh52",
       "description": "Product 2 is a versatile item suitable for various uses.",
       "img": "/images/B.webp"
     },
     {
       "id": 3,
-      "price": 39.99,
+      "price": 139.99,
       "name": "KoniI09",
       "description": "Product 3 is a high-quality and durable option.",
       "img": "/images/C.webp"
@@ -93,17 +93,17 @@
       },
       {
         "id": 14,
-        "price": 799.99,
+        "price": 499.99,
         "name": "Canon5DMarkIV",
         "description": "The Canon5DMarkIV is a professional's choice for high-resolution photography.",
-        "img": "/images/A.jpeg"
+        "img": "/images/L.jpg"
       },
       {
         "id": 15,
-        "price": 599.95,
+        "price": 480.95,
         "name": "PanasonicGH5",
         "description": "Shoot in 4K with the PanasonicGH5, a top-notch mirrorless camera.",
-        "img": "/images/E.webp"
+        "img": "/images/N.jpeg"
       },
       {
         "id": 16,
@@ -121,24 +121,24 @@
       },
       {
         "id": 18,
-        "price": 699.95,
+        "price": 399.95,
         "name": "Canon6D",
         "description": "The Canon6D offers full-frame goodness for serious photographers.",
-        "img": "/images/P.jpg"
+        "img": "/images/P.jpeg"
       },
       {
         "id": 19,
         "price": 169.99,
         "name": "NikonCoolpix",
         "description": "Capture memories with ease using the NikonCoolpix compact camera.",
-        "img": "/images/Q.jpg"
+        "img": "/images/O.jpeg"
       },
       {
         "id": 20,
         "price": 349.99,
         "name": "SonyA7III",
         "description": "The SonyA7III is a versatile mirrorless camera for enthusiasts and professionals.",
-        "img": "/images/R.jpg"
+        "img": "/images/M.webp"
       }
     ]
     
