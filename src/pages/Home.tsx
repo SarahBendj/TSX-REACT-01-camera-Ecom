@@ -1,8 +1,9 @@
 import Welcome from "../component/Welcome";
 import HomeStoreSection from "../component/HomeStoreSection";
-import HomeBlogSection from "../component/HomeBlogSection";
+import HomePicturesSection from "../component/HomePicturesSection";
+import HomeBlogSection from "../component/HomeBlogsSection";
 import HomeSoldItem from "../component/HomeSoldItem";
-import Footer from '../component/Footer';
+
 
 const Home = () => {
     return (
@@ -12,11 +13,12 @@ const Home = () => {
             <div className='bg-white  shadow-sm mb-4' ></div>
            < HomeStoreSection />
            <div className='bg-white  shadow-sm mb-4' ></div>
+           < HomePicturesSection />
+           <div className='bg-white  shadow-sm mb-4' ></div>
            < HomeBlogSection />
            <div className='bg-white  shadow-sm mb-4' ></div>
            <HomeSoldItem />
-         
-            <Footer /> 
+        
         </div>
     );
 };

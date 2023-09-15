@@ -7,11 +7,6 @@ import Vote from '../component/Vote';
 import '../App.scss';
 
 
-// interface ComponentChildren {
-//     children : ReactNode
-// }
-
-
 //*COMPO
 const About = () => {
     

@@ -51,6 +51,7 @@
    border-top: 4px solid #DAA520 ;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  margin-bottom: 5rem;
  
   &-title {
     position: absolute;
@@ -67,36 +68,99 @@
     margin-top: 2rem;
     padding: 1rem;
   }
-  
+  &-sold {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    color: white;
+    padding: 0rem 1rem;
+    background-color: #DAA520;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+  }
 }
 
 
-.blog-pictures{
+.catalogue-pictures{
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
-   width: 100%;
-   height: 100%;
+  justify-content: space-around;
+ 
+   
 }
+.catalogue-picture:nth-child(7) {
+    min-width: 1000px;
+  }
 
+
+.slug {
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  &-displayed  {
+  transform: translateY(0);
+  opacity: 1;
+  }
+
+  &-hidden{
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: 1.5s;
+
+  
+}}
 
 
 .best-seller-items{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.best-seller-scroll{
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+
+  transition: 5s;
+
+}
+
+.arrow-scroll{
   
+  background-color: #DAA520;
+  padding: 1rem;
+  color: black;
+  border-radius: 50px;
+  z-index: 100;
+
+  &:hover{
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+.blog-article {
+  &:hover{
+    transition: 0.8s;
+    cursor: pointer;
+    background-color:rgba(219,217,216,255) ;
+  }
 
 }
 
 
-.sold-off {
-position: absolute;
- background: linear-gradient(to left, rgba(0, 0, 0, 0.9), rgba(255, 0, 0, 0));
- height: 100%;
-  width: 100%;
-  z-index: 20;
+.sold {
+ animation: backgroundColorChange  infinite 2s;
+ z-index: 20;
   
 
 }
@@ -132,14 +196,15 @@ position: absolute;
 
 .search-bar-form {
   width: 50vw;
-  background-color: #842E1B;
+  background-color: rgb(13, 4, 57);
   padding: 1rem;
+  border: white solid 2px;
   border-radius: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   &:hover  {
-    opacity: 0.9;
+    background-color: rgba(255, 255, 255, 0.4);
     transition: 0.3s;
     cursor: pointer;
   }
@@ -150,7 +215,7 @@ position: absolute;
 /* Define the styles for the range input */
 .custom-range {
  padding-top: 1rem;
-  background-color: #ac4c4c;
+  background-color: white ;
 
 
 /* Define the styles for the slider (the thumb) */
@@ -239,4 +304,17 @@ position: absolute;
   padding: 16px;
   border-top: 1px solid #ccc;
   text-align: right;
+}
+
+//*ANIMATION
+
+@keyframes backgroundColorChange {
+  0% , 100% { background-color: #DAA520 };
+  20%,80% { background-color:#b58919};
+  40%,60% { background-color:#a37b17};
+  50% {background-color:#936f14}
+  
+}
+.LOGO{
+  margin-right: 35rem;
 }

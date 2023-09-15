@@ -98,7 +98,7 @@ const SearchBar = ({
           <Form className="d-flex  search-bar-form ">
             <div
               className="bg-white border-0 "
-              style={{ color: "#fff", borderRadius: "50px", margin: "auto" }}
+              style={{ color: "white", borderRadius: "50px", margin: "auto" }}
               className="range"
             >
               <label htmlFor="rangeID" className="range-label"></label>
@@ -114,7 +114,7 @@ const SearchBar = ({
               {rangeValueStart} $ - {rangeValueEnd}
             </div>
             <input
-              style={{ color: "#842E1B", paddingLeft: "2rem" }}
+              style={{ color: "blue", paddingLeft: "2rem" }}
               type="search"
               width="100pw"
               placeholder="Search"
@@ -126,17 +126,17 @@ const SearchBar = ({
             {/* / jdkkddk<input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" /> */}
             <Button
               className="rounded-pill border-0"
-              style={{ background: "#842E1B" }}
+              style={{ background: "rgb(3,1,44)"  }}
             >
               <FontAwesomeIcon icon={faSearch} style={{ color: "#fff" }} />
             </Button>
             <Button
-              className="bg-white border-0 "
-              style={{ color: "#842E1B", borderRadius: "50px" }}
+              className="bg-transparent border-white"
+              style={{ color: "white", background: "rgb(3,1,44)", border: "2px solid ", borderRadius: "50px" }}
               onClick={resetValues}
             >
               {" "}
-              Reset{" "}
+             <h5>Reset</h5>  {" "}
             </Button>
           </Form>
         </Col>

@@ -9,24 +9,30 @@ type ShoppingContextLogic = {
   getItemQuantity: (id: number) => number;
   increaseItemsQuantity: (id: number) => void;
   decreaseItemsQuantity: (id: number) => void;
-  removeItems: () => void;
+  removeItems: (id:number) => void;
+  cartItems :CartItem[];
+  cartTotal : number;
 };
 type CartItem = {
   id: number;
   quantity: number;
 };
+
+
 //- CREATE VAR THATS GONNA INTERFER IN MY CONTEXT
-const shoppingContext = createContext({} as ShoppingContextLogic);
+const ShoppingContext = createContext({} as ShoppingContextLogic);
 
 //- SETTINGS => use my context
-export const useShoppingContext = () => {
-  return useContext(shoppingContext);
+export const UseShoppingContext = () => {
+  return useContext(ShoppingContext);
 };
 
+
 //- RETRUN MY FUNCTION  IN THIS SPECIFIC CONTEXT
-export const shoppingProvider = ({ children }: ShoppingContextProps) => {
+export const ShoppingProvider = ({ children }: ShoppingContextProps) => {
   //*STATE THATS GONNA HANDLE EVERY OPTION OF TRANSACTION
-  const [cartItems, setCartsItems] = useState<CartItem[]>([]);
+const [cartItems, setCartsItems] = useState<CartItem[]>([]);
+const cartTotal : number = cartItems.reduce((quantity , item ) => item.quantity + quantity, 0)
 
   const getItemQuantity = (id: number) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -60,23 +66,29 @@ export const shoppingProvider = ({ children }: ShoppingContextProps) => {
     });
   };
 
-  const removeItems = () => {
-    if (cartItems.length > 0) {
-      setCartsItems([]);
+  const removeItems = (id : number) => {
+    if( id){
+      if (cartItems.length > 0) {
+        setCartsItems([]);
+      }
+
     }
+   
   };
 
   return (
-    <shoppingContext.Provider
+    <ShoppingContext.Provider
       value={{
         getItemQuantity,
         removeItems,
         increaseItemsQuantity,
         decreaseItemsQuantity,
+        cartItems,
+        cartTotal
       }}
     >
       {children}
-    </shoppingContext.Provider>
+    </ShoppingContext.Provider>
   );
 };
-export default shoppingContext;
+export default ShoppingContext;

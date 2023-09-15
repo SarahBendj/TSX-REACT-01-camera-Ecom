@@ -1,5 +1,5 @@
 import { useState, useCallback, MouseEvent, KeyboardEvent } from "react";
-import { useShoppingContext } from "../Context/UseShoppingContext";
+import { UseShoppingContext } from "../Context/UseShoppingContext";
 import { Button } from "react-bootstrap";
 
 
@@ -12,51 +12,19 @@ const Counter = ( {id }:number ) => {
     increaseItemsQuantity,
     decreaseItemsQuantity,
     removeItems,
-  } = useShoppingContext();
+  } = UseShoppingContext();
 
-  // const QUANTITY = removeItems();
-
-  //* CONTEXT ENDED
-
-  //* COMPO BEGINING
-
-  const [counter, setCounter] = useState<number>(0);
-
-
-
-  const increment = useCallback(
-    ( 
-      event: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>
-    ): void => {
-      setCounter((prev) => prev + 1);
-     
-    },
-    []
-  );
-  const decrement = useCallback(
-    (
-      e: MouseEvent<HTMLButtonElement> | KeyboardEvent<HTMLButtonElement>
-    ): void => {
-      if (counter > 0) {
-        setCounter((prev) => prev - 1);
-      } else {
-        setCounter(0);
-      }
-    },
-    []
-  );
+  const quantity : number = getItemQuantity(id);
 
   return (
     <div className="text-center">
-      <div>{counter} in the Basket</div>
+      <div>{quantity} in the Basket</div>
       <div className="d-flex justify-content-around">
-        <Button className="bg-info border-0"  onClick={increment}>+</Button>
-        <Button className="bg-info border-0"  onClick={decrement}>
-          -
-        </Button>
+        <Button className="bg-info border-0"  onClick={()=> {increaseItemsQuantity(id)}}>+</Button>
+        <Button className="bg-info border-0"  onClick={()=> {decreaseItemsQuantity(id)}}> - </Button>
         <Button
           variant="warning"
-          onClick={() => setCounter(0)}
+          onClick={() => {removeItems(id)}}
           className="border-0"
         >
           Remove

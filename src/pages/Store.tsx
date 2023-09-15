@@ -3,7 +3,6 @@ import StoreItem , {StoreItemProps} from '../component/StoreItem'
 import SearchBar from '../component/SearchBar';
 import { Col , Row } from 'react-bootstrap';
 import { useState } from 'react';
-import SettingModal from '../component/Modal';
 import '../App.scss';
 
 
@@ -11,8 +10,6 @@ const Store = () => {
 
     const [ filtredItems , setFiltredItems ] = useState<StoreItemProps[]>(StoreItems);
    
-
-
     return (
         <div>
             <h1> Store</h1>

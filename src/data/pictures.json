@@ -1,27 +1,38 @@
 [
     {
       "id": 1,
+      "slug": "The photographer is John Wick, using our performant Camera SonyS85 a master of his craft, about his dedication and talent.  ",
       "img" :"/images/FLOWER1.webp"
     },
     {
       "id": 2,
-      "img" :"/images/FLOWER5.webp"
-    },
-    {
-      "id": 3,
+      "slug": "The photographer of this picture the renowned Lara Sforr, using our performant Camera SonyS85 a master of his craft. With an expert eye and unparalleled skill, he captured this moment using our trusted camera Fuji85W. dunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.  ",
       "img" :"/images/FLOWER3.jpeg"
     },
     {
+      "id": 3,
+      "slug": "The photographer is Julia Yonda, using our performant Camera SonyS85 . With an expert eye and unparalleled skil  using our trusted camera Fuji85W.  ",
+      "img" :"/images/FLOWER8.jpeg"
+    },
+    {
       "id": 4,
+      "slug": "The photographer is Mathieu St Pierre, using our performant Camera CanonW5 , he captured this moment using our trusted camera .  ",
       "img" :"/images/FLOWER4.jpeg"
     },
     {
       "id": 5,
+      "slug": "The photographer is Paul Cesar, captured this moment using our Sonyour trusted camera Fuji85W.  ",
       "img" :"/images/FLOWER2.jpeg"
     },
     {
       "id": 6,
-      "img" :"/images/FLOWER8.jpeg"
+      "slug": "The photographer is Paul Cesar, captured this moment using our Sonyour trusted camera Fuji85W.  ",
+      "img" :"/images/FLOWER5.webp"
+    },
+    {
+      "id": 7,
+      "slug": "The photographer of this picture the renowned Camilla Rukovski, a master of his craft. With an expert eye and unparalleled skill, he captured this moment using his trusted camera, which is known for delivering exceptional quality and precision.   ",
+      "img" :"/images/water.jpeg"
     }
   ]
   

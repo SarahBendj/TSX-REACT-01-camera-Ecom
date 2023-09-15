@@ -80,7 +80,7 @@
       {
         "id": 12,
         "price": 429.99,
-        "name": "OlympusOMD3",
+        "name": "OlympusOMD",
         "description": "The OlympusOMD3 offers exceptional image quality and durability.",
         "img": "/images/J.jpeg"
       },
@@ -94,7 +94,7 @@
       {
         "id": 14,
         "price": 499.99,
-        "name": "Canon5DMarkIV",
+        "name": "Canon5DMk",
         "description": "The Canon5DMarkIV is a professional's choice for high-resolution photography.",
         "img": "/images/L.jpg"
       },
