@@ -9,7 +9,7 @@ const useNotification = () => {
     notyf.open({
       
       message: message,
-      background : '#842E1B',
+      background : 'teal',
       duration: 2000,
       position: {
         x: 'right',
@@ -19,8 +19,8 @@ const useNotification = () => {
     });
   };
 
-  return { showSuccess: (message:string) => showNotification(message, 'hdjsqjkl'), 
-        showError: (message:string) => showNotification(message, 'error') };
+  return { showSuccess: (message:string) => showNotification(message, ''), 
+        showError: (message:string) => showNotification(message, '') };
 };
 
 export default useNotification;

@@ -6,6 +6,7 @@ import { UseShoppingContext } from '../Context/UseShoppingContext';
 import StoreItem  , { StoreItemProps } from './StoreItem';
 import StoreData from '../data/items.json';
 import { Link } from 'react-router-dom';
+import useNotification from '../hooks/Notification';
 
 type SlideBasketProps = {
     isBasketShowed :boolean 
@@ -19,7 +20,6 @@ const SlideBasket = ({ isBasketShowed ,handleSlideBasketCLOSE } : SlideBasketPro
     //*RETURNING ONLY SELECTED ITEMS 
       const selectedItemsToBuy: StoreItemProps |null [] = 
       StoreData.filter((item : StoreItemProps)  => cartItems.some((cartItem)=> cartItem.id  === item.id ));
-
 
     return (
             
@@ -35,7 +35,7 @@ const SlideBasket = ({ isBasketShowed ,handleSlideBasketCLOSE } : SlideBasketPro
                 <Offcanvas.Title>  <FontAwesomeIcon icon={faShoppingCart} color={'#DAA520'} /> Selected Items </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body> 
-                     <Stack gap={3}>
+                     <Stack >
                         {
                           selectedItemsToBuy.map((item : StoreItemProps)=>(
                             <Col style={{ scale : '0.8'}} key={item.id}>  < StoreItem {...item} /> </Col>
@@ -48,7 +48,7 @@ const SlideBasket = ({ isBasketShowed ,handleSlideBasketCLOSE } : SlideBasketPro
                      </Offcanvas.Body>
 
                      {/* //*PAYEMENT */}
-                    <Link  to='/Payement'>
+                    <Link  to={{ pathname : '/Payement' , state : { selectedItems : 'hello' } }}>
                     <Button  onClick={handleSlideBasketCLOSE } 
                 variant='bg-transparent' 
                 style={{  width : '100%' , 

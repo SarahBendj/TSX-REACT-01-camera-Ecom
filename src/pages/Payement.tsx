@@ -1,6 +1,12 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const Payement = () => {
+
+  const location = useLocation();
+  const selectedItems = location.state?.selectedItems ;
+  console.log(location.state)
+  console.log(selectedItems)
   return (
     <div className="SECTION ">
       <h2 className="SECTION-title">Payment Confirmation</h2>

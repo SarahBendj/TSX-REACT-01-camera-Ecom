@@ -33,7 +33,7 @@ const HomeBlogsSection = () => {
       <div style={{ position: "absolute"  ,top: '50%', left: '50%', transform: 'translate(-10%, -50%)' }}> 
       {NewArrayOfBlogsShowingOnHome.map((blog : BlogProps) => (
 
-        <Card className="my-3" >
+        <Card key={blog.id} className="my-3" >
      
      <Link  style={{ color: 'gray', textDecoration: 'none' }} to='/about'>   <Card.Body className="blog-article">
           <Card.Title>

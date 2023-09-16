@@ -65,7 +65,8 @@ const HomeStoreSection = () => {
           </Button>
           <div ref={elementRef} className="best-seller-scroll">
             {NewArrayOfBestSeller.map((item : StoreItemProp) => (
-              <Card id={item.id} style={{ minWidth: "300px" }}>
+              <Card key={item.id} 
+              style={{ minWidth: "300px" }}>
                 <RevealCompnenet>
                   <Card.Img
                     variant="top "

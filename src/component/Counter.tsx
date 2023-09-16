@@ -1,9 +1,13 @@
 import { useState, useCallback, MouseEvent, KeyboardEvent } from "react";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
 import { Button } from "react-bootstrap";
+import useNotification from "../hooks/Notification";
 
 
-const Counter = ( {id }:number ) => {
+const Counter = ( { id  , name} ) => {
+
+  const { showSuccess } = useNotification()
+
 
   //*CONTEXT SHOPPING STARTS
 
@@ -20,11 +24,12 @@ const Counter = ( {id }:number ) => {
     <div className="text-center">
       <div>{quantity} in the Basket</div>
       <div className="d-flex justify-content-around">
-        <Button className="bg-info border-0"  onClick={()=> {increaseItemsQuantity(id)}}>+</Button>
+        <Button className="bg-info border-0"  onClick={()=> {increaseItemsQuantity(id);
+      showSuccess(`Model ${name} has been successfully added `)}}> + </Button>
         <Button className="bg-info border-0"  onClick={()=> {decreaseItemsQuantity(id)}}> - </Button>
         <Button
           variant="warning"
-          onClick={() => {removeItems(id)}}
+          onClick={() => {removeItems(id) ;  showSuccess(`Model ${name} has been successfully added `)}}
           className="border-0"
         >
           Remove

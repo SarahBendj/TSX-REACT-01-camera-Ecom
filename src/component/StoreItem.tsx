@@ -14,13 +14,11 @@ type StoreItemProps = {
 
 const StoreItem = ({ id, price, name, description, img }: StoreItemProps ) => {
 
-
   return (
-  
     < >
      
       {/* MY CARD */}
-    <Card id={id}  className='card-shape'  >
+    <Card key={id}  className='card-shape'  >
       <RevealComponnent><Card.Img
         variant="top "
         src={img}
@@ -36,16 +34,12 @@ const StoreItem = ({ id, price, name, description, img }: StoreItemProps ) => {
 
         <RevealComponnent>  <div className="d-flex justify-content-space-between align-items-center">
           {" "}
-          <Counter id={id} />
+          <Counter id={id} name={name} />
         </div> </RevealComponnent>
       </Card.Body>
       <ModalBootstrap title={name} img={img} description={description}   />
     </Card>
  
-
-
-
-    
 
     </>
   

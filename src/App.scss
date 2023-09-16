@@ -4,6 +4,18 @@
   font-family: 'Dancing Script', cursive;
 }
 
+.style-cart-total{
+
+    position: absolute;
+    background-color: crimson;
+    padding: 0.2rem 0.6rem; 
+    border-radius: 50%; 
+    bottom: -10%;
+    left: -10%;
+    color: white; 
+    font-weight: bold;
+    font-size: 1rem;
+  }
 //*ABOUT PAGE 
 //*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'ABOUT' USES
 .vote-section-item {

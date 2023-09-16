@@ -4,18 +4,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import SlideBasket from './SlideBasket';
 import { useState } from 'react';
+import { UseShoppingContext } from '../Context/UseShoppingContext';
 
 
 const Navbar = () => {
+    const { cartItems , cartTotal } = UseShoppingContext();
 
     const [isBasketShowed, setIsBasketShowed] = useState<boolean | null>(null)
 
     const handleSlideBasketCLOSE = () : void => {
+
+
         setIsBasketShowed(false);
     };
     const handleSlideBasketOPEN = (): void => {
         setIsBasketShowed(true);
     };
+
 
     return (
         <NavBootstrap className='bg-white  shadow-sm mb-4'>
@@ -30,10 +35,12 @@ const Navbar = () => {
                    <Nav.Link to="/Store"  as={NavLink} ><h2>Store</h2></Nav.Link>
                  </Nav>
                  <Button 
-                 onClick={()=>{handleSlideBasketOPEN}}
-                 style={{ background : '#DAA520' ,fontSize:'1.6rem'}} 
+                 
+                 onClick={handleSlideBasketOPEN}
+                 style={{ background : '#DAA520' ,fontSize:'1.6rem' , position:'relative'}} 
                  className='border-0'>  
-                 <FontAwesomeIcon onClick={handleSlideBasketOPEN} icon={faShoppingCart} /> Shop!</Button>
+                 <div className='style-cart-total'>{ cartTotal} </div>
+                 <FontAwesomeIcon  icon={faShoppingCart} /> Shop!</Button>
                  < SlideBasket isBasketShowed={isBasketShowed}  handleSlideBasketCLOSE={ handleSlideBasketCLOSE }  /> 
                   </Container>
             

@@ -7,7 +7,6 @@ const HomeBlogSection = () => {
 
   const handleOnMouseEnter = (i) => {
     if (i.id) {
-      console.log(i.id);
       setImageIsHovered(i.id);
     }
   };
@@ -35,11 +34,11 @@ const HomeBlogSection = () => {
             >
               {pictureData.map((i) => (
                 <RevealComponent>
-                  <div
+                  <div  
+                   key={i.id}
                     className="catalogue-picture"
                     onMouseEnter={() => handleOnMouseEnter(i)}
                     onMouseLeave={handleOnMouseLeave}
-                    key={i.id}
                     style={{ position: "relative" }}
                   >
                     <img
