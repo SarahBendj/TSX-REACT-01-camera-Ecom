@@ -14,13 +14,13 @@ type BlogProps = {
 
 const BlogShape = ({ title, date, author, content }: BlogProps) => {
   return (
-    
-    <Card className="my-3" style={{ position:'relative'}}>
+    <div style= {{ padding : '1rem'}} >
+    <Card className="my-3" style={{ position:'relative' }}>
       <Card.Body>
         <Card.Title >
         <RevealDivElement  width='fit-content'> 
         <div>
-            <h4 className="mb-2 border-bottom" style={{ color: '#842E1B'}}>{title}</h4>
+            <h4 className="mb-2 border-bottom" style={{ color: '#DAA520'}}>{title}</h4>
           </div></RevealDivElement>
          <div>
             <p className="text-muted">
@@ -35,7 +35,7 @@ const BlogShape = ({ title, date, author, content }: BlogProps) => {
       <LikeNdislike />
       </div>
     </Card>
-   
+    </div>
   );
 };
 

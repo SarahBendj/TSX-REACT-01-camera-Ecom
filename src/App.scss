@@ -28,10 +28,15 @@
     }
 }
 
+.hovered{
+  &:hover {
+    opacity: 0.7;
+  }
+  
+}
+
 .about-container  {
   height: 400px !important;
-
- 
   
 }
 .blog-scroller {
@@ -42,13 +47,13 @@
   }
   
   &::-webkit-scrollbar-thumb {
-    background-color: #842E1B; /* Set the color of the scrollbar thumb */
+    background-color:#DAA520; /* Set the color of the scrollbar thumb */
     border-radius: 8px; /* Round the corners of the thumb */
   }
   
   &::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
-    background-color: #8c5c51; /* Change the color on hover */
+    background-color: #bb8703; /* Change the color on hover */
   }
 
 }

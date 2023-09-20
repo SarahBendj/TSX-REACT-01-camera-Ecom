@@ -77,6 +77,7 @@ const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
 
   const cartTotal = cartItems ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+  
 
 
   return (

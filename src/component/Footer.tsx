@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 
 const Footer = () => {
   return (
+    // <div className="footer-postion " style={{ position:'absolute' , bottom:'0' }}>
     <div className="bg-white d-flex direction-column justify-content-spacebetween" style={{ width: "100vw", textAlign: "center" }}>
       <div className="d-flex direction-row" >
         <div className="footer-payement-methodes">
@@ -52,6 +53,7 @@ const Footer = () => {
         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
     </div>
+    
   );
 };
 

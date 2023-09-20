@@ -26,9 +26,9 @@ const LikeNdislike = () => {
       <Button  style={{ background: '#f3efef'}}className='border-0'  onClick={TogglelikesState}>
 
         {like ? (
-           <FontAwesomeIcon icon={faHeart} style={{ color: '#842E1B'}} /> 
+           <FontAwesomeIcon icon={faHeart} style={{ color: '#DAA520'}} /> 
         ) : (
-            <FontAwesomeIcon icon={emptyHeart} style={{ color: '#842E1B'}} />
+            <FontAwesomeIcon icon={emptyHeart} style={{ color: '#DAA520'}} />
         )
         }
        

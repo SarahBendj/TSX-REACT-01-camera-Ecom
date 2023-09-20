@@ -55,7 +55,7 @@ export const Animation = ({ children, width}:RevealProps )=> {
                 bottom : 4,
                 right : 0,
                 left : 0 ,
-                background : '#8c5c51',
+                background : '#c5ac6e',
                 opacity : '0.8',
                 zIndex : 10,
 

@@ -5,7 +5,11 @@ import RevealCompnenet from "../hooks/Reveal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useRef ,RefObject } from "react";
+import { UseShoppingContext } from '../Context/UseShoppingContext';
+import useNotification from "../hooks/Notification";
+
 
 
 //*TYPES
@@ -16,6 +20,10 @@ type ScrollProps = {
 
 
 const HomeStoreSection = () => {
+
+  const { increaseItemsQuantity } = UseShoppingContext();
+  //*INFROM THE CLIENT OF THE TRANSACTION
+  const { showSuccess } = useNotification();
   //* SETTINGS 
   const NewArrayOfBestSeller = StoreItemsData.slice(5, 15);
   const elementRef : RefObject<HTMLElement> |null  = useRef(null)
@@ -73,7 +81,14 @@ const HomeStoreSection = () => {
                     src={item.img}
                     height="250px"
                     style={{ objectFit: "cover" }}
-                  />
+                  />  <Button  onClick={ ()=> {
+                     increaseItemsQuantity(item.id)  
+                    showSuccess(`Model ${item.name} has been successfully added `)}}
+                   className='bg-transparent border-0 hovered' 
+                   style={{ color : 'rgb(15, 15, 144)'  ,
+                    padding: '-1rem' ,scale:'1.5'}}>
+                      <FontAwesomeIcon  icon={faShoppingCart} />
+                      </Button>
                 </RevealCompnenet>
                 <Card.Body className=" d-flex flex-column">
                   <RevealCompnenet>
@@ -86,6 +101,7 @@ const HomeStoreSection = () => {
                       <RevealCompnenet>
                         {" "}
                         <span className="ms-2"> {item.price} $ </span>{" "}
+                       
                       </RevealCompnenet>
                     </Card.Title>{" "}
                   </RevealCompnenet>

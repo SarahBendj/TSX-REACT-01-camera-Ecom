@@ -12,6 +12,8 @@ const Vote = () => {
 
   
 
+  
+
   const ResultOfVotes = (votechoice: number): number => {
     const MaxRate: number =
     votePourcentageChoice1 + votePourcentageChoice2 + votePourcentageChoice3;
@@ -23,6 +25,7 @@ const Vote = () => {
 
   const HandleVote1 = () => {
     SetVotePourcentageChoice1(votePourcentageChoice1 + 1);
+
   };
   const HandleVote2 = () => {
     SetVotePourcentageChoice2(votePourcentageChoice2 + 1);
@@ -39,7 +42,7 @@ const Vote = () => {
           <Col className="text-align">
           <RevealComponenet>  <Button
               onClick={HandleVote1}
-              style={{ background: "#842E1B", color: "white", padding: "1rem" }}
+              style={{ background: "#DAA520", color: "white", padding: "1rem" }}
               className="w-100 border-0 vote-section-item"
             >
               <div className="d-flex flex-row justify-content-between">
@@ -52,7 +55,7 @@ const Vote = () => {
 
           <RevealComponenet>  <Button
               onClick={HandleVote2}
-              style={{ background: "#842E1B", color: "white", padding: "1rem" }}
+              style={{ background: "#DAA520", color: "white", padding: "1rem" }}
               className="w-100 border-0 vote-section-item"
             >
               <div className="d-flex flex-row justify-content-between">
@@ -65,7 +68,7 @@ const Vote = () => {
 
           <RevealComponenet>  <Button
               onClick={HandleVote3}
-              style={{ background: "#842E1B", color: "white", padding: "1rem" }}
+              style={{ background: "#DAA520", color: "white", padding: "1rem" }}
               className="w-100 border-0 vote-section-item"
             >
               <div className="d-flex flex-row justify-content-between ">
