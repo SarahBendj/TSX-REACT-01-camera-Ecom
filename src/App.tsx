@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Store from './pages/Store';
 import About from './pages/About';
 import Navbar from './component/Navbar';
+import Welcome from './component/Welcome';
 import Footer from './component/Footer';
 import SlideBasket from './component/SlideBasket';
 import { ShoppingProvider } from './Context/UseShoppingContext';
@@ -18,10 +19,11 @@ function App() {
     < ShoppingProvider>
     <div className="App">
     <Navbar />
+  
     <SlideBasket />
      <Container className='mb-4'>
       <Routes>
-        <Route path='/' element= { <Home />}></Route>
+        <Route path='/' element= {  <> < Welcome /> <Home /> </>}></Route>
         <Route path='/Store' element={<Store />}></Route>
         <Route path='/About' element= { <About />}></Route>
         <Route path='/Payement' element= { <Payement />}></Route>

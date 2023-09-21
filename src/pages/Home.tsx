@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div>
             Home
-            < Welcome /> 
+          
             <div className='bg-white  shadow-sm mb-4' ></div>
            < HomeStoreSection />
            <div className='bg-white  shadow-sm mb-4' ></div>

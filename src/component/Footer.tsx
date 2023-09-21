@@ -1,15 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram } from "@fortawesome/free-solid-svg-icons";
-import { Container } from "react-bootstrap";
+import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
   return (
-    // <div className="footer-postion " style={{ position:'absolute' , bottom:'0' }}>
-    <div className="bg-white d-flex direction-column justify-content-spacebetween" style={{ width: "100vw", textAlign: "center" }}>
-      <div className="d-flex direction-row" >
-        <div className="footer-payement-methodes">
+  
+    <div className="bg-white footer-wrapper" style={{ width: "100vw", textAlign: "center" }}>
+      <div className="footer-container" >
+        <div className="footer-service-client">
+          <div>
           <ul style={{ listStyle: "none", textAlign: "left" }}>
             <li>Aspernatur amet repudiandae mollitia soluta tenetur?</li>
             <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
@@ -18,7 +15,7 @@ const Footer = () => {
             <li>Rate novos fuego maiores quos</li>
           </ul>
         </div>
-        <div className="footer-service-client">
+        
           <div className="footer-item-title"> 
           <ul style={{ listStyle: "none", textAlign: "left" }}>
             <li>Help</li>
@@ -28,8 +25,8 @@ const Footer = () => {
             <li>Contact</li>
           </ul>
           </div>
-        </div>
-        <div className="footer-item-title">
+
+          <div className="footer-item-title">
         <ul style={{ listStyle: "none", textAlign: "left" }}>
           <li>About Us</li>
           <li>FAQ</li>
@@ -37,14 +34,21 @@ const Footer = () => {
           <li>Privacy Policy</li>
           <li>Blog</li>
         </ul>
+        </div> 
+        
         </div>
+        
 
-        <div className="footer-social-media">
-          {/* <FontAwesomeIcon icon={faFacebook} />
-        <FontAwesomeIcon icon={faInstagram} />
-        <FontAwesomeIcon icon={faLinkedin} /> */}
         </div>
-      </div>
+        <div className="footer-social-media">
+          <SocialIcon url='www.facebook.com'/>
+          <SocialIcon url='www.instagram.com'/>
+          <SocialIcon url='www.linkedin.com'/>
+          <SocialIcon url='www.twitter.com'/>
+          <SocialIcon url='www.meetup.com'/>
+    
+        </div>
+     
     
 
       <div>

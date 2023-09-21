@@ -10,6 +10,8 @@ const Vote = () => {
   const [votePourcentageChoice3, SetVotePourcentageChoice3] =
     useState<number>(25);
 
+
+  const [ isVotedFor ,setIsVotedFor ] = useState<boolean>(false);
   
 
   
@@ -34,6 +36,12 @@ const Vote = () => {
     SetVotePourcentageChoice3(votePourcentageChoice3 + 1);
   };
 
+  const buttonVotableStyle = {
+    background: isVotedFor?  "blue " :"#DAA520",
+    color: "white",
+    padding: "1rem"
+  }
+
   return (
     <div>
       <Container style={{ height: "100%" }} >
@@ -42,7 +50,7 @@ const Vote = () => {
           <Col className="text-align">
           <RevealComponenet>  <Button
               onClick={HandleVote1}
-              style={{ background: "#DAA520", color: "white", padding: "1rem" }}
+              style={buttonVotableStyle}
               className="w-100 border-0 vote-section-item"
             >
               <div className="d-flex flex-row justify-content-between">
@@ -55,7 +63,7 @@ const Vote = () => {
 
           <RevealComponenet>  <Button
               onClick={HandleVote2}
-              style={{ background: "#DAA520", color: "white", padding: "1rem" }}
+             style={buttonVotableStyle}
               className="w-100 border-0 vote-section-item"
             >
               <div className="d-flex flex-row justify-content-between">
@@ -68,7 +76,7 @@ const Vote = () => {
 
           <RevealComponenet>  <Button
               onClick={HandleVote3}
-              style={{ background: "#DAA520", color: "white", padding: "1rem" }}
+             style={buttonVotableStyle}
               className="w-100 border-0 vote-section-item"
             >
               <div className="d-flex flex-row justify-content-between ">

@@ -83,7 +83,9 @@ const HomeStoreSection = () => {
                     style={{ objectFit: "cover" }}
                   />  <Button  onClick={ ()=> {
                      increaseItemsQuantity(item.id)  
-                    showSuccess(`Model ${item.name} has been successfully added `)}}
+                    showSuccess(`Model ${item.name} has been successfully added to your cart `)
+                  }}
+
                    className='bg-transparent border-0 hovered' 
                    style={{ color : 'rgb(15, 15, 144)'  ,
                     padding: '-1rem' ,scale:'1.5'}}>

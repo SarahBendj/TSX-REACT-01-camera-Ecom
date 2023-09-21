@@ -3,6 +3,39 @@
 .App {
   font-family: 'Dancing Script', cursive;
 }
+//*WELCOMING SECTION ************************************//
+
+.welcome-image-container {
+  position: relative;
+  height: 65vh;
+  width: 80vw;
+ 
+  
+}
+.welcome-text {
+  transform: rotate(-5deg);
+  background-color: rgba(250, 244, 244, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: rgb(45, 33, 14);
+  width: 40%;
+  height: 40%;
+  z-index: -8;
+
+}
+
+.welcome-image {
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  z-index: -10;
+}
 
 .style-cart-total{
 
@@ -20,6 +53,9 @@
 //*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'ABOUT' USES
 .vote-section-item {
   margin-bottom: 2rem;
+  background: #DAA520;
+  color: white;
+  padding: 1rem ;
 
     &:hover {
       opacity: 0.6;
@@ -316,6 +352,32 @@
   padding: 16px;
 }
 
+//************************************/******************************///////
+//*FOOTER
+.footer-wrapper {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social-media {
+  width: 30vw;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around  ;
+  align-items: center;
+
+
+}
+.footer-service-client {
+  
+  display: flex;
+  flex-direction: row;
+}
 
 .modal-footer {
   padding: 16px;

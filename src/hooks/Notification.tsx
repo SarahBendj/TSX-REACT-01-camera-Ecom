@@ -2,15 +2,20 @@
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 
+type NotificationProps = {
+  message : string;
+  type : string;
+}
+
 const useNotification = () => {
   const notyf = new Notyf();
 
-  const showNotification = (message :string) => {
+  const showNotification = ( { message , type } : NotificationProps) => {
     notyf.open({
-      
+      type: type,
       message: message,
-      background : 'teal',
-      duration: 2000,
+      background : 'rgba(1,150,44,0.8)',
+      duration: 2500,
       position: {
         x: 'right',
         y: 'top',
@@ -19,8 +24,9 @@ const useNotification = () => {
     });
   };
 
-  return { showSuccess: (message:string) => showNotification(message, ''), 
-        showError: (message:string) => showNotification(message, '') };
+  return { showSuccess: (message : string) => showNotification( { message , type:'success'} ), 
+        showError: (message : string) => showNotification ( { message , type : 'error'}),
+      showWarning : (message : string) => showNotification( { message ,type : 'warning'}) };
 };
 
 export default useNotification;
