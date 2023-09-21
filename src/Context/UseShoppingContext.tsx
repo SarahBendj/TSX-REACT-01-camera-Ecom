@@ -1,4 +1,7 @@
-import { useContext, ReactNode, createContext, useState } from "react";
+import { useContext, ReactNode, createContext, useState , useEffect } from "react";
+import storeData from '../data/items.json';
+import { StoreItemProps } from "../component/StoreItem";
+
 
 //-DECLARE my TYPES
 type ShoppingContextProps = {
@@ -12,6 +15,8 @@ type ShoppingContextLogic = {
   removeItems: (id:number) => void;
   cartItems :CartItem[];
   cartTotal : number;
+  selectedItemsToBuy : StoreItemProps[];
+  amountToPay:number;
 };
 type CartItem = {
   id: number;
@@ -30,8 +35,11 @@ export const UseShoppingContext = () => {
 
 //- RETRUN MY FUNCTION  IN THIS SPECIFIC CONTEXT
 export const ShoppingProvider = ({ children }: ShoppingContextProps) => {
+  
+  //************************STATES ********************/
   //*STATE THATS GONNA HANDLE EVERY OPTION OF TRANSACTION
 const [cartItems, setCartItems] = useState<CartItem[]>([]);
+const [amountToPay, setAmountToPay] = useState<number>(0);
 
   const getItemQuantity = (id: number) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -75,8 +83,37 @@ const [cartItems, setCartItems] = useState<CartItem[]>([]);
     });
   };
 
-
+ //*1)RETURNING NUMBER OF ITEMS & EVERY GROUP OF ITEMS 
   const cartTotal = cartItems ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+
+
+//*2) MATCHING THE SELECTED WITH THE EXISTING DATA
+  const selectedItemsToBuy = storeData.filter((item: StoreItemProps) =>
+  cartItems.some((cartItem) => cartItem.id === item.id)
+);
+
+//*3)RETURNING THE SUM OF PRICE TO PAY
+  // const selectedItemsToBuy: StoreItemProps | null[] = StoreData.filter(
+  //   (item: StoreItemProps) =>
+  //     cartItems.some((cartItem) => cartItem.id === item.id)
+  // );
+
+  useEffect(() => {
+    const amountOfPricesToPay = () :void => {
+      if (selectedItemsToBuy.length > 0) {
+        const totalPrice :number[]= [];
+
+        selectedItemsToBuy.forEach((i :StoreItemProps) => totalPrice.push(i.price));
+     
+        const sum: number = totalPrice.reduce((price, total) => price + total + 0);
+        setAmountToPay(sum);
+      }
+     
+    };
+    amountOfPricesToPay()
+  }, [cartItems , selectedItemsToBuy , setAmountToPay]);
+
+
   
 
 
@@ -89,6 +126,8 @@ const [cartItems, setCartItems] = useState<CartItem[]>([]);
         decreaseItemsQuantity,
         cartItems,
         cartTotal,
+        selectedItemsToBuy,
+        amountToPay,
       }}
     >
       {children}

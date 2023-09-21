@@ -2,10 +2,8 @@ import { Offcanvas, Button, Stack, Col, Card } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
-import { StoreItemProps } from "./StoreItem";
-import StoreData from "../data/items.json";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+
 
 type SlideBasketProps = {
   isBasketShowed: boolean;
@@ -16,30 +14,8 @@ const SlideBasket = ({
   isBasketShowed,
   handleSlideBasketCLOSE,
 }: SlideBasketProps) => {
-  const { cartItems, cartTotal } = UseShoppingContext();
-  const [amountToPay, setAmountToPay] = useState<number>(0);
-  console.log(cartItems, cartTotal);
-
-  //*RETURNING ONLY SELECTED ITEMS
-  const selectedItemsToBuy: StoreItemProps | null[] = StoreData.filter(
-    (item: StoreItemProps) =>
-      cartItems.some((cartItem) => cartItem.id === item.id)
-  );
-
-  useEffect(() => {
-    const amountOfPricesToPay = () :void => {
-      if (selectedItemsToBuy.length > 0) {
-        const totalPrice :number[]= [];
-
-        selectedItemsToBuy.forEach((i :StoreItemProps) => totalPrice.push(i.price));
-     
-        const sum: number = totalPrice.reduce((price, total) => price + total + 0);
-        setAmountToPay(sum);
-      }
-     
-    };
-    amountOfPricesToPay()
-  }, [cartItems , selectedItemsToBuy , setAmountToPay]);
+  const { selectedItemsToBuy , amountToPay} = UseShoppingContext();
+ 
 
   return (
     <Offcanvas
@@ -93,10 +69,8 @@ const SlideBasket = ({
 
       {/* //*PAYEMENT */}
       <Link
-        to={{
-          pathname: `/Payement`,
-          state: { selectedItems: selectedItemsToBuy },
-        }}
+        to= {'/Payement'}
+         
       >
         <Button
           onClick={handleSlideBasketCLOSE}
