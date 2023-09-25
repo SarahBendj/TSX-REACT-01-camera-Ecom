@@ -1,20 +1,47 @@
 @use '/src/Style/stl.scss';
 
 .App {
-  font-family: 'Dancing Script', cursive;
+  font-family: stl.$regular-font;
+}
+
+
+//*NAVBAR
+.logo-container{
+  position: relative;
+
+}
+.logo{
+  position: absolute;
+  width: 60px;
+  border-radius: 50px;
+  border: #DAA520 2px solid ;
+  top: 0;
+  left: 0;
+}
+//* slide bakset 
+
+.remove-item-from-basket {
+  position: absolute;
+  right: 0;
+  &:hover {
+    background-color: #791d08;
+    color:white
+
+  }
+
 }
 //*WELCOMING SECTION ************************************//
 
 .welcome-image-container {
   position: relative;
-  height: 65vh;
+  height: 30vh;
   width: 80vw;
  
   
 }
 .welcome-text {
   transform: rotate(-5deg);
-  background-color: rgba(250, 244, 244, 0.2);
+  background-color: rgba(250, 244, 244, 0.9);
   position: absolute;
   top: 50%;
   left: 42%;
@@ -107,6 +134,7 @@
   margin-bottom: 5rem;
  
   &-title {
+    font-family: stl.$fontArt;
     position: absolute;
     top: 0;
     left: 10%;
@@ -251,14 +279,15 @@
   width: 50vw;
   background-color: rgb(13, 4, 57);
   padding: 1rem;
-  border: white solid 2px;
+  border: rgb(255,255,255,0.3) solid 2px;
   border-radius: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   &:hover  {
-    background-color: rgba(255, 255, 255, 0.4);
-    transition: 0.3s;
+    border: white solid 2px;
+  
+    transition: 0.5s;
     cursor: pointer;
   }
 }
@@ -274,18 +303,11 @@
 /* Define the styles for the slider (the thumb) */
 &::-webkit-slider-thumb {
   /* Set the color of the slider thumb */
-  background-color: #bb00ff;
+  color: #bb00ff;
+  cursor: pointer;
 
 }
-/* For Firefox */
-&::-moz-range-thumb {
-  background-color: #ff00c8;
-}
 
-/* For IE and Edge */
-&::-ms-thumb {
-  background-color: #eeff00;
-}
 }
 
  ///**********************************************************/

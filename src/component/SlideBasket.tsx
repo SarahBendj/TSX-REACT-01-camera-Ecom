@@ -2,8 +2,9 @@ import { Offcanvas, Button, Stack, Col, Card } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
+import { StoreItemProps } from "./StoreItem";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
 
 type SlideBasketProps = {
   isBasketShowed: boolean;
@@ -14,8 +15,32 @@ const SlideBasket = ({
   isBasketShowed,
   handleSlideBasketCLOSE,
 }: SlideBasketProps) => {
-  const { selectedItemsToBuy , amountToPay} = UseShoppingContext();
- 
+  const {
+    selectedItemsToBuy,
+    amountToPay,
+    removeItems,
+    getItemQuantity,
+    increaseItemsQuantity,
+    decreaseItemsQuantity,
+  } = UseShoppingContext();
+
+  const [ isHovered , setIsHovered ] = useState<boolean>(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const buttonStyle = {
+    backgroundColor: isHovered ? 'rgb(3,1,44)' : '',
+    border: isHovered ? '2px solid white': "2px solid rgb(3,1,44)",
+    color: isHovered ?'white': "rgb(3,1,44)",
+    width: "30%",
+    margin: "1rem",
+  };
 
   return (
     <Offcanvas
@@ -48,7 +73,19 @@ const SlideBasket = ({
         <Stack>
           {selectedItemsToBuy.map((item: StoreItemProps) => (
             <Col style={{ scale: "0.8" }} key={item.id}>
-              <Card key={item.id} className=" d-flex ">
+              <Card
+                key={item.id}
+                className=" d-flex "
+                style={{ position: "relative" }}
+              >
+                <Button
+                  variant="warning"
+                  className="remove-item-from-basket"
+                  onClick={() => removeItems(item.id)}
+                >
+                  {" "}
+                  X
+                </Button>
                 <Card.Img
                   variant="top "
                   src={item.img}
@@ -61,6 +98,31 @@ const SlideBasket = ({
                     <span className="ms-2"> {item.price} $ </span>
                   </Card.Title>
                 </Card.Body>
+                <div className="d-flex ">
+                  <div style={{ width: "100%" }}>
+                    <Button
+                      variant="bg-transparent"
+                      style={buttonStyle}
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={() => increaseItemsQuantity(item.id)}
+                    >
+                      {" "}
+                      +{" "}
+                    </Button>
+                    <Button
+                      variant="bg-transparent"
+                      style={buttonStyle}
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={() => decreaseItemsQuantity(item.id)}
+                    >
+                      {" "}
+                      -{" "}
+                    </Button>
+                  </div>
+                  <h6> ({getItemQuantity(item.id)} x) Items </h6>
+                </div>
               </Card>
             </Col>
           ))}
@@ -68,10 +130,7 @@ const SlideBasket = ({
       </Offcanvas.Body>
 
       {/* //*PAYEMENT */}
-      <Link
-        to= {'/Payement'}
-         
-      >
+      <Link to={"/Payement"}>
         <Button
           onClick={handleSlideBasketCLOSE}
           variant="bg-transparent"

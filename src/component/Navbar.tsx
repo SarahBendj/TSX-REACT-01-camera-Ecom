@@ -5,6 +5,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import SlideBasket from './SlideBasket';
 import { useState } from 'react';
 import { UseShoppingContext } from '../Context/UseShoppingContext';
+import LOGO from '../../public/images/CAPTURA.png';
 
 
 const Navbar = () => {
@@ -27,7 +28,10 @@ const Navbar = () => {
            
             <Container>
                  <Nav className=''>
-                 <h1 className="LOGO"> CAPTURA</h1>
+                    <div className="logo-container">
+                 <h1 className="logo-name"  style={{paddingLeft: '4rem'}}> CAPTURA</h1>
+                 <img src={LOGO} alt={`Picture of ${LOGO}`} className='logo' />
+                 </div>
                    <Nav.Link to="/"  as={NavLink} > <h2>Home</h2></Nav.Link>
 
                    <Nav.Link to="/about"  as={NavLink} ><h2>About</h2> </Nav.Link>

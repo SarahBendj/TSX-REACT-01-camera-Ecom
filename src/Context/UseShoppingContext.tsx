@@ -93,10 +93,6 @@ const [amountToPay, setAmountToPay] = useState<number>(0);
 );
 
 //*3)RETURNING THE SUM OF PRICE TO PAY
-  // const selectedItemsToBuy: StoreItemProps | null[] = StoreData.filter(
-  //   (item: StoreItemProps) =>
-  //     cartItems.some((cartItem) => cartItem.id === item.id)
-  // );
 
   useEffect(() => {
     const amountOfPricesToPay = () :void => {

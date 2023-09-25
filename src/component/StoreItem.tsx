@@ -4,7 +4,7 @@ import RevealComponnent from '../hooks/Reveal';
 import ModalBootstrap from './Modal';
 
 
-type StoreItemProps = {
+export type StoreItemProps = {
   id: number;
   price: number;
   name: string;
@@ -37,7 +37,7 @@ const StoreItem = ({ id, price, name, description, img }: StoreItemProps ) => {
           <Counter id={id} name={name} />
         </div> </RevealComponnent>
       </Card.Body>
-      <ModalBootstrap title={name} img={img} description={description}   />
+      <ModalBootstrap  id={id} title={name} img={img} description={description}   />
     </Card>
  
 

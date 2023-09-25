@@ -1,10 +1,10 @@
-import { useState, useCallback, MouseEvent, KeyboardEvent } from "react";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
 import { Button } from "react-bootstrap";
 import useNotification from "../hooks/Notification";
+import { StoreItemProps } from './StoreItem';
 
 
-const Counter = ( { id  , name} ) => {
+const Counter = ( { id  , name} : StoreItemProps ) => {
 
   const { showSuccess } = useNotification()
 
@@ -24,7 +24,8 @@ const Counter = ( { id  , name} ) => {
     <div className="text-center">
       <div>{quantity} in the Basket</div>
       <div className="d-flex justify-content-around">
-        <Button className="bg-info border-0" style={{ marginRight: '0.5rem'}}  onClick={()=> {increaseItemsQuantity(id);
+        <Button className="bg-info border-0" style={{ marginRight: '0.5rem'}}  onClick={()=> 
+        {increaseItemsQuantity(id);
       showSuccess(`Model ${name} has been successfully added `)}}> + </Button>
         <Button className="bg-info border-0"  onClick={()=> {decreaseItemsQuantity(id)}}> - </Button>
         <Button

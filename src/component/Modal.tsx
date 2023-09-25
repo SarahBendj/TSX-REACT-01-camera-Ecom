@@ -1,8 +1,14 @@
 import  { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import { UseShoppingContext } from "../Context/UseShoppingContext";
+import useNotification from "../hooks/Notification";
 
-const MyModal = ({children , title , description , img}) => {
+const MyModal = ({children , title , description , img , id}) => {
+
+  const { increaseItemsQuantity } = UseShoppingContext();
+  const { showSuccess } = useNotification();
+
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => {
@@ -21,20 +27,26 @@ const MyModal = ({children , title , description , img}) => {
 
       <Modal className="modal-overlay" show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className='modal-heading'>{title}</Modal.Title>
+          <Modal.Title className='modal-heading' style={{ color:'#DAA520' }}>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {children}
            <img className='modal-img' src={img} />
            <div className="modal-content-header"> Good to know</div>
-           <p className="modal-content">{description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nam cum assumenda exercitationem. 
+           <p className="modal-content"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nam cum assumenda exercitationem. 
            Mollitia, voluptates. Aperiam quo optio maxime repellat illo aut modi. Voluptatem beatae aut ut non quam deserunt!</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary border-0" onClick={handleClose} style={{   color:'wheat', backgroundColor:'crimson'}}>
             Close
           </Button>
-          <Button  style={{ backgroundColor:'#842E1B' }}  className='border-0' variant="primary" onClick={handleClose}>
+          <Button  style={{ backgroundColor:'#DAA520' , color:'black' }}  className='border-0' variant="primary" 
+           onClick={()=>
+             { increaseItemsQuantity(id);
+              showSuccess(`Model ${title} has been successfully added `);
+              setShowModal(false) }
+             }
+             >
              + Add to the basket
           </Button>
         </Modal.Footer>
