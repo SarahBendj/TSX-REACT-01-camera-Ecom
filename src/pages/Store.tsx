@@ -12,7 +12,7 @@ const Store = () => {
    
     return (
         <div>
-            <h1> Store</h1>
+            <h1 className='special-title' style={{color: 'white'}}> Store</h1>
            <SearchBar StoreItems={StoreItems}  setFiltredItems={setFiltredItems}  /> 
             <Row  >
                 {filtredItems.map((item:StoreItemProps) => (

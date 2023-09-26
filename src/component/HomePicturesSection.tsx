@@ -20,7 +20,7 @@ const HomeBlogSection = () => {
         <div className="SECTION-content ">
           <div className="best-seller">
             {" "}
-            <h4>
+            <h4 style={{ marginBottom: '2rem'}}>
               Capture the Best Moments of the Year with Captura! Unlock the
               power of photography with our handpicked selection of the year's
               best cameras. From stunning landscapes to unforgettable portraits,
@@ -30,7 +30,7 @@ const HomeBlogSection = () => {
             </h4>
             <div
               className="catalogue-pictures"
-              style={{ backgroundColor: "rgb(1, 3, 44)" }}
+              style={{ backgroundColor: "rgb(1, 3, 44 , 0.8)" }}
             >
               {pictureData.map((i) => (
                 <RevealComponent>
@@ -54,7 +54,7 @@ const HomeBlogSection = () => {
                     <p
                       className={
                         imageIsHovered === i.id
-                          ? "slug slug-displayed"
+                          ? "slug slug-displayed special-title"
                           : "slug slug-hidden"
                       }
                     >

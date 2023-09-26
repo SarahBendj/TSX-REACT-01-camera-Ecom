@@ -44,7 +44,7 @@ const Vote = () => {
 
   return (
     <div>
-      <Container style={{ height: "100%" }} >
+      <Container  className='special-title' style={{ height: "100%" }} >
         <Card.Text> <h4> To which category you think you belong to ?</h4></Card.Text>
         <Row  className='d-flex flex-row'>
           <Col className="text-align">
@@ -67,7 +67,7 @@ const Vote = () => {
               className="w-100 border-0 vote-section-item"
             >
               <div className="d-flex flex-row justify-content-between">
-                <span> professional</span>{" "}
+                <span>Pro</span>{" "}
                 <span> {ResultOfVotes(votePourcentageChoice2)} %</span>
               </div>
             </Button> </RevealComponenet>

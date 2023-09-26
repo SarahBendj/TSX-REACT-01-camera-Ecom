@@ -112,13 +112,7 @@
         "description": "The SonyRX100 is a pocket-sized camera with impressive features.",
         "img": "/images/F.webp"
       },
-      {
-        "id": 17,
-        "price": 299.99,
-        "name": "FujifilmXT4",
-        "description": "The FujifilmXT4 is a mirrorless camera with advanced video capabilities.",
-        "img": "/images/O.jpg"
-      },
+    
       {
         "id": 18,
         "price": 399.95,

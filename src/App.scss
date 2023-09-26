@@ -18,6 +18,19 @@
   top: 0;
   left: 0;
 }
+.logo-name{
+  margin: 0 40rem 0 0 ;
+}
+.test  {
+  background-color: #a37b17;
+}
+.nav-link{
+
+  &:hover {
+    background-color: rgba(3,1,44,0.1);
+ 
+  }
+}
 //* slide bakset 
 
 .remove-item-from-basket {
@@ -123,6 +136,9 @@
 ///**********************************************************/
 /// //*HOME PAGE 
 //*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'STORE' USES
+.special-title {
+  font-family: stl.$fontArt;
+}
 
 .SECTION{
   position: relative;
@@ -415,7 +431,4 @@
   40%,60% { background-color:#a37b17};
   50% {background-color:#936f14}
   
-}
-.LOGO{
-  margin-right: 35rem;
 }

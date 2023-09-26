@@ -79,7 +79,7 @@ const HomeStoreSection = () => {
                   <Card.Img
                     variant="top "
                     src={item.img}
-                    height="250px"
+                    height="200px"
                     style={{ objectFit: "cover" }}
                   />  <Button  onClick={ ()=> {
                      increaseItemsQuantity(item.id)  
@@ -98,7 +98,7 @@ const HomeStoreSection = () => {
                     <Card.Title className="d-flex justify-content-space-between align-items-baseline">
                       <RevealCompnenet>
                         {" "}
-                        <span className="fs-2">{item.name}</span>{" "}
+                        <span className='fs-4'  >{item.name}</span>{" "}
                       </RevealCompnenet>
                       <RevealCompnenet>
                         {" "}

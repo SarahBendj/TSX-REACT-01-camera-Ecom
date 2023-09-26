@@ -24,23 +24,47 @@ const SlideBasket = ({
     decreaseItemsQuantity,
   } = UseShoppingContext();
 
-  const [ isHovered , setIsHovered ] = useState<boolean>(false);
+const [isPlusHovered, setIsPlusHovered] = useState<boolean>(false);
+const [isMinusHovered, setIsMinusHovered] = useState<boolean>(false);
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
+//* Plus ************************/
+const handleMouseEnterPlusButton = (item) => {
+  console.log(item)
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
+  setIsPlusHovered(true);
+  setIsMinusHovered(false)
+};
 
-  const buttonStyle = {
-    backgroundColor: isHovered ? 'rgb(3,1,44)' : '',
-    border: isHovered ? '2px solid white': "2px solid rgb(3,1,44)",
-    color: isHovered ?'white': "rgb(3,1,44)",
-    width: "30%",
-    margin: "1rem",
-  };
+const handleMouseLeavePlusButton = (item) => {
+
+  setIsPlusHovered(false);
+};
+
+//* Minus *************************/
+const handleMouseEnterMinusButton = () => {
+  setIsMinusHovered(true);
+};
+
+const handleMouseLeaveMinusButton = () => {
+  setIsMinusHovered(false);
+};
+
+
+const buttonStylePlus = {
+  backgroundColor: isPlusHovered ? 'rgb(3,1,44)' : '',
+  border: isPlusHovered ? '2px solid white' : '2px solid rgb(3,1,44)',
+  color: isPlusHovered ? 'white' : 'rgb(3,1,44)',
+  width: '30%',
+  margin: '1rem',
+};
+const buttonStyleMinus = {
+  backgroundColor:  isMinusHovered ? 'rgb(3,1,44)' : '',
+  border:  isMinusHovered ? '2px solid white' : '2px solid rgb(3,1,44)',
+  color:  isMinusHovered ? 'white' : 'rgb(3,1,44)',
+  width: '30%',
+  margin: '1rem',
+};
+
 
   return (
     <Offcanvas
@@ -102,9 +126,9 @@ const SlideBasket = ({
                   <div style={{ width: "100%" }}>
                     <Button
                       variant="bg-transparent"
-                      style={buttonStyle}
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
+                      style={buttonStylePlus}
+                      onMouseEnter={handleMouseEnterPlusButton}
+                      onMouseLeave={handleMouseLeavePlusButton}
                       onClick={() => increaseItemsQuantity(item.id)}
                     >
                       {" "}
@@ -112,9 +136,9 @@ const SlideBasket = ({
                     </Button>
                     <Button
                       variant="bg-transparent"
-                      style={buttonStyle}
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
+                      style={buttonStyleMinus}
+                      onMouseEnter={handleMouseEnterMinusButton}
+                      onMouseLeave={handleMouseLeaveMinusButton}
                       onClick={() => decreaseItemsQuantity(item.id)}
                     >
                       {" "}
