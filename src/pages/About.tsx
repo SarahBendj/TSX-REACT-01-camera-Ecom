@@ -16,6 +16,7 @@ const About = () => {
            <h1  className='special-title' style={{ color: 'white'}}> Latest blogs </h1>
            <div className="about-container" style={{ backgroundColor : 'rgba(255,255,255,0.3)',padding : '1rem' , minHeight : '100vh'}}>
         <div className="d-flex flex-row jutify-content-between about-container">
+            <div className="hidden-mobile">
         <div className='d-flex flex-column jutify-content-between '>
         <Card style={{  position:'relative' }}>
             <Card.Img  style={{ maxWidth : '100%'}}src={ImageLayer} />
@@ -23,7 +24,7 @@ const About = () => {
              <h3  className='special-title' > Feel every moment</h3> </Card.Text>
            < Vote />
         </Card>
-
+        </div>
         </div>
 
         {/* BLOG ZONE */}

@@ -1,4 +1,4 @@
-import Welcome from "../component/Welcome";
+
 import HomeStoreSection from "../component/HomeStoreSection";
 import HomePicturesSection from "../component/HomePicturesSection";
 import HomeBlogSection from "../component/HomeBlogsSection";
@@ -7,17 +7,20 @@ import HomeSoldItem from "../component/HomeSoldItem";
 
 const Home = () => {
     return (
-        <div>
-            Home
+        <div >
           
-            <div className='bg-white  shadow-sm mb-4' ></div>
+            <div className='bg-white  shadow-sm mb-4' >
            < HomeStoreSection />
-           <div className='bg-white  shadow-sm mb-4' ></div>
+           </div>
+           <div className='bg-white  shadow-sm mb-4' >
            < HomePicturesSection />
-           <div className='bg-white  shadow-sm mb-4' ></div>
+           </div>
+           <div className='bg-white  shadow-sm mb-4' >
            < HomeBlogSection />
-           <div className='bg-white  shadow-sm mb-4' ></div>
+           </div>
+           <div className='bg-white  shadow-sm mb-4' >
            <HomeSoldItem />
+           </div>
         
         </div>
     );

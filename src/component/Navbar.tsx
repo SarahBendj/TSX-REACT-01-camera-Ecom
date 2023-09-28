@@ -13,6 +13,7 @@ import { useState } from "react";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
 import LOGO from "../../public/images/CAPTURA.png";
 import { useLocation } from "react-router-dom";
+import NavMobileMenu from "./NavMobileMenuModal";
 
 const Navbar = () => {
   const location = useLocation();
@@ -28,10 +29,11 @@ const Navbar = () => {
     setIsBasketShowed(true);
   };
 
+
   return (
     <NavBootstrap className="bg-white  shadow-sm mb-4">
-      <Container>
-        <Nav style={{ paddingBottom: " 0.5rem" }}>
+      <Container >
+        <Nav className="navbar-mobile" style={{ paddingBottom: " 0.5rem" }}>
           <div className="logo-container">
             <h1
               className="logo-name special-title"
@@ -40,8 +42,10 @@ const Navbar = () => {
               {" "}
               CAPTURA
             </h1>
-            <img src={LOGO} alt={`Picture of ${LOGO}`} className="logo" />
+            <img src={LOGO} alt={`Picture of ${LOGO}`} className="logo hidden-mobile" />
+  
           </div>
+          <div  className="menu-mobile">
 
           <Nav.Link to="/" as={NavLink} className="special-title nav-link">
             {" "}
@@ -55,6 +59,23 @@ const Navbar = () => {
           <Nav.Link to="/Store" as={NavLink} className="special-title nav-link">
             <h2>Store</h2>
           </Nav.Link>
+          </div>
+
+          {/* //*IF MOBILE MODE THEN DO THIS  */}
+          <NavMobileMenu >
+              <Nav.Link to="/" as={NavLink} className="special-title nav-link">
+            {" "}
+            <h2>Home</h2>
+          </Nav.Link>
+
+          <Nav.Link to="/about" as={NavLink} className="special-title nav-link">
+            <h2>About</h2>{" "}
+          </Nav.Link>
+
+          <Nav.Link to="/Store" as={NavLink} className="special-title nav-link">
+            <h2>Store</h2>
+          </Nav.Link> 
+          </NavMobileMenu>
         </Nav>
         <Button
           onClick={handleSlideBasketOPEN}

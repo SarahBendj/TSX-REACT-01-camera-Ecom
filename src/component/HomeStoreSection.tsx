@@ -57,6 +57,7 @@ const HomeStoreSection = () => {
       <div className="SECTION-content">
         <div className="best-seller">
           {" "}
+          <div className="hidden-mobile">
           <h4>
             Capture the Best Moments of the Year with Captura! Unlock the power
             of photography with our handpicked selection of the year's best
@@ -65,6 +66,14 @@ const HomeStoreSection = () => {
             and professional photographers. Discover the perfect tool to freeze
             time and create memories that last a lifetime.
           </h4>
+          </div>
+          <div className="show-mobile">
+            <h4  style={{ marginBottom: '2rem'}}>
+            Unlock the power
+            of photography with our handpicked selection of the year's best
+            cameras.
+              </h4>
+            </div>
         </div>
         <div className="best-seller-items">
           <Button className="bg-transparent border-0" onClick={scrollToTheLeft}>

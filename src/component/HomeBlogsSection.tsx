@@ -15,7 +15,7 @@ const HomeBlogsSection = () => {
         <h2 className="SECTION-title">Most visited blogs!</h2>
           <div className="SECTION-content ">
            
-              {" "}
+          <div className="hidden-mobile">
               <h4>
               Capture the Best Moments of the Year with Captura! Unlock the power of
         photography with our handpicked selection of the year's best cameras.
@@ -24,13 +24,23 @@ const HomeBlogsSection = () => {
         photographers. Discover the perfect tool to freeze time and create
         memories that last a lifetime.
               </h4>
+              </div>
+          <div className="show-mobile">
+            <h4  style={{ marginBottom: '2rem'}}>
+            Unlock the power
+            of photography with our handpicked selection of the year's best
+            cameras.
+              </h4>
+            
+        </div>
+              
               
       {" "}
     
       
-    <div style={{position:'relative' }}><img src={ImageLayer} style={{ borderRadius : "10px" , height: '70vh'}} />
+    <div style={{position:'relative' }}><img src={ImageLayer} className='image-home-blogs'  style={{ borderRadius : "10px" , height: '70vh'}} />
       
-      <div style={{ position: "absolute"  ,top: '50%', left: '50%', transform: 'translate(-10%, -50%)' }}> 
+      <div  className='home-blogs' > 
       {NewArrayOfBlogsShowingOnHome.map((blog : BlogProps) => (
 
         <Card key={blog.id} className="my-3" >

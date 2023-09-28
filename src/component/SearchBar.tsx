@@ -86,6 +86,8 @@ const SearchBar = ({
     setNoMatchingProductMessage(false)
   };
 
+ 
+
   //*TSX
   return (
     <>
@@ -96,14 +98,16 @@ const SearchBar = ({
       <Row className="search-bar">
         <Col sm={4}>
           <Form className="d-flex  search-bar-form ">
+
+            <div className="hidden-mobile">
             <div
-              className="bg-white border-0 "
+              className=" bg-white border-0 "
               style={{ color: "white", borderRadius: "50px", margin: "auto" }}
               className="range"
             >
-              <label htmlFor="rangeID" className="range-label"></label>
+              <label htmlFor="rangeID" className="range-label hidden-mobile"></label>
               <input
-                className="custom-range"
+                className="custom-range hidden-mobile"
                 onChange={handleRangeValue}
                 type="range"
                 id="rangeID"
@@ -113,31 +117,36 @@ const SearchBar = ({
               />{" "}
               {rangeValueStart} $ - {rangeValueEnd}
             </div>
+            </div>
+
+            {/* //* ONLY THIS NEEDS TO APPEAR IF MOBILE'S VERSION IS ACTIVE */} 
             <input
               style={{ color: "blue", paddingLeft: "2rem" }}
               type="search"
               width="100pw"
               placeholder="Search"
-              className="me-2 rounded-pill"
+              className="me-2 rounded-pill "
               aria-label="Search"
               value={searchClue}
               onChange={HasMatchingItems}
             />
-            {/* / jdkkddk<input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" /> */}
+             
+             <div className="hidden-mobile">
             <Button
-              className="rounded-pill border-0"
+              className="hidden-mobile rounded-pill border-0 "
               style={{ background: "rgb(3,1,44)"  }}
             >
               <FontAwesomeIcon icon={faSearch} style={{ color: "#fff" }} />
             </Button>
             <Button
-              className="bg-transparent border-white"
+              className="hidden-mobile bg-transparent border-white"
               style={{ color: "white", background: "rgb(3,1,44)", border: "2px solid ", borderRadius: "50px" }}
               onClick={resetValues}
             >
               {" "}
-             <h5>Reset</h5>  {" "}
+             <h5 className="hidden-mobile">Reset</h5>  {" "}
             </Button>
+            </div>
           </Form>
         </Col>
        

@@ -16,8 +16,9 @@ function App() {
   
 
   return (
-    < ShoppingProvider>
     <div className="App">
+    < ShoppingProvider>
+
     <Navbar />
   
     <SlideBasket />
@@ -32,8 +33,9 @@ function App() {
      </Container>
       
      <Footer /> 
-     </div>
+    
      </ShoppingProvider>
+     </div>
   )
 }
 

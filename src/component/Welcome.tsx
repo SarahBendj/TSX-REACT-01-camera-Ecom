@@ -1,5 +1,5 @@
 // import WelcomingImage from "../../public/images/cameraMain.jpeg";
-import WelcomingImage from "../../public/images/fontimage.jpeg";
+import WelcomingImage from "../../public/images/capturaMain.jpeg";
 
 const welcome = () => {
   return (
@@ -9,7 +9,7 @@ const welcome = () => {
     >
         <div className="welcome-image-container">
       <img
-        className="welcome-image"
+        className="welcome-image "
         src={WelcomingImage}
         alt="image of camera on an old map "
       />

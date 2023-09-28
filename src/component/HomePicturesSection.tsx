@@ -18,16 +18,22 @@ const HomeBlogSection = () => {
     <div className="SECTION">
       <h2 className="SECTION-title">Boost your Carrer!</h2>
         <div className="SECTION-content ">
-          <div className="best-seller">
+          <div className="  best-seller">
             {" "}
-            <h4 style={{ marginBottom: '2rem'}}>
+            <div className="hidden-mobile">
+            <h4  style={{ marginBottom: '2rem'}}>
               Capture the Best Moments of the Year with Captura! Unlock the
               power of photography with our handpicked selection of the year's
               best cameras. From stunning landscapes to unforgettable portraits,
               these cameras have proven themselves as the go-to choice for both
               amateur and professional photographers. Discover the perfect tool
               to freeze time and create memories that last a lifetime.{" "}
-            </h4>
+            </h4> </div>
+            <div className="show-mobile">
+            <h4  style={{ marginBottom: '2rem'}}>
+              Capture the Best Moments of the Year with Captura !
+              </h4>
+            </div>
             <div
               className="catalogue-pictures"
               style={{ backgroundColor: "rgb(1, 3, 44 , 0.8)" }}
@@ -42,7 +48,7 @@ const HomeBlogSection = () => {
                     style={{ position: "relative" }}
                   >
                     <img
-                      className=""
+                      className="mobile-picures-format"
                       style={{
                         height: "320px",
                         width: "100%",
