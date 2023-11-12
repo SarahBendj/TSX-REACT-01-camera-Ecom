@@ -3,6 +3,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { StoreItemProps } from "./StoreItem";
+import React from 'react';
 
 const SearchBar = ({
   StoreItems,
@@ -144,7 +145,7 @@ const SearchBar = ({
               onClick={resetValues}
             >
               {" "}
-             <h5 className="hidden-mobile">Reset</h5>  {" "}
+             <h5 className="hidden-mobile">Clear</h5>  {" "}
             </Button>
             </div>
           </Form>
