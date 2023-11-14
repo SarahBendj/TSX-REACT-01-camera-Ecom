@@ -16,6 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "bootstrap": "^5.3.1",
     "framer-motion": "^10.16.3",
+    "lodash": "^4.17.21",
     "notyf": "^3.10.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
@@ -24,6 +25,7 @@
     "react-social-icons": "^6.3.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.201",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { useRef ,RefObject } from "react";
+import { useRef ,RefObject, useEffect } from "react";
 import { UseShoppingContext } from '../Context/UseShoppingContext';
 import useNotification from "../hooks/Notification";
 
@@ -16,32 +16,53 @@ import useNotification from "../hooks/Notification";
 type ScrollProps = {
   delay :number
   scrollAmount :number
+  step: number
  };
 
 
 const HomeStoreSection = () => {
-
+ 
   const { increaseItemsQuantity } = UseShoppingContext();
   //*INFROM THE CLIENT OF THE TRANSACTION
   const { showSuccess } = useNotification();
   //* SETTINGS 
-  const NewArrayOfBestSeller = StoreItemsData.slice(5, 15);
+  const NewArrayOfBestSeller = StoreItemsData.slice(6, 15);
   const elementRef : RefObject<HTMLElement> |null  = useRef(null)
 
-  const scrollToTheLeft = ( { delay = 50 , scrollAmount = 50}: ScrollProps) => {
+  const scrollToTheLeft = ({ delay = 10, scrollAmount = 50, step = 3 }: ScrollProps) => {
     const scrolling = () => {
       elementRef.current.scrollLeft -= scrollAmount;
       if (elementRef.current.scrollLeft > 0) {
+        const screenWidth = window.innerWidth;
+        if (screenWidth > 600) {
+          step = 3;
+        } else {
+          step = 5; 
+        }
+        scrollAmount -= step; 
+        if (scrollAmount < 0) {
+          scrollAmount = 0;
+        }
         setTimeout(scrolling, delay);
       }
     };
     scrolling();
   };
 
-  const scrollToTheRight = ( { delay = 50 , scrollAmount = 50}: ScrollProps) => {
+  const scrollToTheRight = ({ delay = 10, scrollAmount = 50, step = 3 }) => {
     const scrolling = () => {
       elementRef.current.scrollLeft += scrollAmount;
       if (elementRef.current.scrollLeft < elementRef.current.scrollWidth - elementRef.current.clientWidth) {
+        scrollAmount -= step;
+        const screenWidth = window.innerWidth;
+        if (screenWidth > 600) {
+          step = 3;
+        } else {
+          step = 5; 
+        }
+        if (scrollAmount < 0) {
+          scrollAmount = 0;
+        }
         setTimeout(scrolling, delay);
       }
     };
@@ -83,7 +104,7 @@ const HomeStoreSection = () => {
           <div ref={elementRef} className="best-seller-scroll">
             {NewArrayOfBestSeller.map((item : StoreItemProp) => (
               <Card key={item.id} 
-              style={{ minWidth: "300px" }}>
+              style={{ minWidth: "200px" }}>
                 <RevealCompnenet>
                   <Card.Img
                     variant="top "

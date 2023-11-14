@@ -2,7 +2,7 @@ import { SocialIcon } from "react-social-icons";
 
 const Footer = () => {
   return (
-  
+      
     <div className="bg-white footer-wrapper" style={{ width: "100vw", textAlign: "center" }}>
       <div className="footer-container" >
         <div className="footer-service-client">

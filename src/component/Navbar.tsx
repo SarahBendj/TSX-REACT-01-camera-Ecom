@@ -19,7 +19,6 @@ const Navbar = () => {
   const location = useLocation();
 
   const { cartTotal } = UseShoppingContext();
-
   const [isBasketShowed, setIsBasketShowed] = useState<boolean | null>(null);
 
   const handleSlideBasketCLOSE = (): void => {
@@ -28,7 +27,6 @@ const Navbar = () => {
   const handleSlideBasketOPEN = (): void => {
     setIsBasketShowed(true);
   };
-
 
   return (
     <NavBootstrap className="bg-white  shadow-sm mb-4">

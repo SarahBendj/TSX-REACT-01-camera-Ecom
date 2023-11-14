@@ -8,9 +8,6 @@ const Counter = ( { id  , name} : StoreItemProps ) => {
 
   const { showSuccess } = useNotification()
 
-
-  //*CONTEXT SHOPPING STARTS
-
   const {
     getItemQuantity,
     increaseItemsQuantity,
@@ -24,10 +21,10 @@ const Counter = ( { id  , name} : StoreItemProps ) => {
     <div className="text-center">
       <div>{quantity} in the Basket</div>
       <div className="d-flex justify-content-around">
-        <Button className="bg-info border-0" style={{ marginRight: '0.5rem'}}  onClick={()=> 
+        <Button  variant="transparent" className="btn-outline-dark" style={{ marginRight: '0.5rem'}}  onClick={()=> 
         {increaseItemsQuantity(id);
       showSuccess(`Model ${name} has been successfully added `)}}> + </Button>
-        <Button className="bg-info border-0"  onClick={()=> {decreaseItemsQuantity(id)}}> - </Button>
+        <Button  variant="transparent" className="btn-outline-dark" onClick={()=> {decreaseItemsQuantity(id)}}> - </Button>
         <Button
          
           variant="warning"

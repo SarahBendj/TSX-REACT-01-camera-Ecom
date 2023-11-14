@@ -175,7 +175,21 @@ section {
   animation: showTitle 1s  linear 1;
  
 }
-
+.ticket-payement{
+  display: flex;
+  justify-content: flex-start;
+ 
+  &-detail {
+    text-align: left;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.3rem;
+  }
+}
+.payment-content{
+  color: #b48317;
+  
+}
 @keyframes cancelBlur {
   0% {
     filter:blur(25px);

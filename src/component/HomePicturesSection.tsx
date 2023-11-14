@@ -34,6 +34,7 @@ const HomeBlogSection = () => {
               Capture the Best Moments of the Year with Captura !
               </h4>
             </div>
+
             <div
               className="catalogue-pictures"
               style={{ backgroundColor: "rgb(1, 3, 44 , 0.8)" }}
@@ -57,13 +58,14 @@ const HomeBlogSection = () => {
                       }}
                       src={i.img}
                     />
-                    <p
+                    <p 
                       className={
+                        
                         imageIsHovered === i.id
                           ? "slug slug-displayed special-title"
                           : "slug slug-hidden"
                       }
-                    >
+                     key={i.id}>
                       {" "}
                       {i.slug}{" "}
                     </p>
