@@ -2,7 +2,7 @@ import StoreItems from '../data/items.json';
 import StoreItem , {StoreItemProps} from '../component/StoreItem'
 import SearchBar from '../component/SearchBar';
 import { Col , Row } from 'react-bootstrap';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../App.scss';
 
 

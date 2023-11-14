@@ -3,8 +3,17 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
 import useNotification from "../hooks/Notification";
+import React from "react";
 
-const MyModal = ({children , title , description , img , id}) => {
+type ModalProps = {
+  title: string;
+  description?: string;
+  img: string;
+  id:  number;
+  children?: React.ReactNode; 
+}
+
+const MyModal = ({children , title , img , id} : ModalProps) => {
 
   const { increaseItemsQuantity } = UseShoppingContext();
   const { showSuccess } = useNotification();

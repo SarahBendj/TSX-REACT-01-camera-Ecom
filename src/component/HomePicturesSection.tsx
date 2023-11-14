@@ -1,17 +1,25 @@
 import pictureData from "../data/pictures.json";
 import RevealComponent from "../hooks/Reveal";
 import { useState } from "react";
+import React from "react";
 
+
+type pictureProps = {
+  id ?: number
+  slug : string
+  img : string
+}
 const HomeBlogSection = () => {
-  const [imageIsHovered, setImageIsHovered] = useState<boolean | null>(null);
 
-  const handleOnMouseEnter = (i) => {
+  const [imageIsHovered, setImageIsHovered] = useState<number>();
+
+  const handleOnMouseEnter = (i :pictureProps) => {
     if (i.id) {
       setImageIsHovered(i.id);
     }
   };
   const handleOnMouseLeave = () => {
-    setImageIsHovered(false);
+    setImageIsHovered(0);
   };
 
   return (
@@ -58,17 +66,7 @@ const HomeBlogSection = () => {
                       }}
                       src={i.img}
                     />
-                    <p 
-                      className={
-                        
-                        imageIsHovered === i.id
-                          ? "slug slug-displayed special-title"
-                          : "slug slug-hidden"
-                      }
-                     key={i.id}>
-                      {" "}
-                      {i.slug}{" "}
-                    </p>
+                     <p className={`slug ${imageIsHovered !== null && imageIsHovered ===i.id ? "slug-displayed special-title" : "slug-hidden"}`}>  {i.slug}</p>
                   </div>
                 </RevealComponent>
               ))}

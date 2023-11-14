@@ -9,17 +9,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import SlideBasket from "./SlideBasket";
-import { useState } from "react";
+import React,{ useState } from "react";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
 import LOGO from "../../public/images/CAPTURA.png";
 import { useLocation } from "react-router-dom";
 import NavMobileMenu from "./NavMobileMenuModal";
 
+
 const Navbar = () => {
   const location = useLocation();
 
   const { cartTotal } = UseShoppingContext();
-  const [isBasketShowed, setIsBasketShowed] = useState<boolean | null>(null);
+  const [isBasketShowed, setIsBasketShowed] = useState<boolean >(false);
 
   const handleSlideBasketCLOSE = (): void => {
     setIsBasketShowed(false);

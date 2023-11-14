@@ -4,7 +4,7 @@ import LikeNdislike from './LikeNdislike';
 import RevealDivElement from '../hooks/Reveal'
 
 
-type BlogProps = {
+export type BlogProps = {
   id: number;
   title: string;
   date: string;

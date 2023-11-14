@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
 
 const Payment = () => {

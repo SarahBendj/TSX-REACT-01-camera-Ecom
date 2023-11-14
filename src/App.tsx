@@ -6,22 +6,17 @@ import About from './pages/About';
 import Navbar from './component/Navbar';
 import Welcome from './component/Welcome';
 import Footer from './component/Footer';
-import SlideBasket from './component/SlideBasket';
 import { ShoppingProvider } from './Context/UseShoppingContext';
 import Payement from './pages/Payement';
+import React from 'react';
 import './App.scss'
 
 
 function App() {
-  
-
   return (
     <div className="App">
     < ShoppingProvider>
-
     <Navbar />
-  
-    <SlideBasket />
      <Container className='mb-4'>
       <Routes>
         <Route path='/' element= {  <> < Welcome /> <Home /> </>}></Route>

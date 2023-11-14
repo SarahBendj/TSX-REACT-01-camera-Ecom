@@ -1,10 +1,16 @@
 import { UseShoppingContext } from "../Context/UseShoppingContext";
 import { Button } from "react-bootstrap";
 import useNotification from "../hooks/Notification";
-import { StoreItemProps } from './StoreItem';
+import React from "react";
 
 
-const Counter = ( { id  , name} : StoreItemProps ) => {
+type  CounterProps = {
+  id: number;
+  name: string;
+}
+
+
+const Counter = ( { id  , name} : CounterProps ) => {
 
   const { showSuccess } = useNotification()
 

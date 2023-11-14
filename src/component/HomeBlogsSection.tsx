@@ -1,15 +1,16 @@
 import blogData from "../data/blogs.json";
 import { Card } from "react-bootstrap";
 import RevealComponent from "../hooks/Reveal";
-import { BlogProps } from './BlogShape';
+import  { BlogProps }  from './BlogShape';
 import { Link } from "react-router-dom";
 import LikeNdislike from "./LikeNdislike";
 import ImageLayer from "../../public/images/blog.webp";
+import React from "react";
 
 
 const HomeBlogsSection = () => {
 
-    const NewArrayOfBlogsShowingOnHome = blogData.slice(0,2);
+    const NewArrayOfBlogsShowingOnHome : BlogProps[] = blogData.slice(0,2);
     return (
         <div className="SECTION">
         <h2 className="SECTION-title">Most visited blogs!</h2>
@@ -41,7 +42,7 @@ const HomeBlogsSection = () => {
     <div style={{position:'relative' }}><img src={ImageLayer} className='image-home-blogs'  style={{ borderRadius : "10px" , height: '70vh'}} />
       
       <div  className='home-blogs' > 
-      {NewArrayOfBlogsShowingOnHome.map((blog : BlogProps) => (
+      {NewArrayOfBlogsShowingOnHome.map((blog) => (
 
         <Card key={blog.id} className="my-3" >
      

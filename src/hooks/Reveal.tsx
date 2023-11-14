@@ -1,10 +1,10 @@
 import { useEffect ,useRef } from "react";
 import {motion , useInView , useAnimation } from 'framer-motion';
-import { ReactNode } from 'react';
+import React,{ ReactNode } from 'react';
 
 type RevealProps = {
     children : ReactNode
-    width : "fit-content" | "100%"
+    width ?: "fit-content" | "100%"
 }
 
 

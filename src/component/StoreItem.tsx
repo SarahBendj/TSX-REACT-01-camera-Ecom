@@ -2,6 +2,7 @@ import { Card } from "react-bootstrap";
 import Counter from "./Counter";
 import RevealComponnent from '../hooks/Reveal';
 import ModalBootstrap from './Modal';
+import React from "react";
 
 
 export type StoreItemProps = {
@@ -26,7 +27,8 @@ const StoreItem = ({ id, price, name, description, img }: StoreItemProps ) => {
         style={{ objectFit: "cover" }}
       /></RevealComponnent>
    <Card.Body className=" d-flex flex-column" >
-   <RevealComponnent>      <Card.Title className="d-flex justify-content-space-between align-items-baseline">
+   <RevealComponnent>     
+     <Card.Title className="d-flex justify-content-space-between align-items-baseline">
           <RevealComponnent> <span className="fs-2">{name}</span>  </RevealComponnent>  
           <RevealComponnent> <span className="ms-2"> {price} $ </span>  </RevealComponnent>  
         </Card.Title> </RevealComponnent>

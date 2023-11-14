@@ -1,9 +1,9 @@
-import { KeyboardEvent, MouseEvent, useState } from "react";
+import React,{ KeyboardEvent, MouseEvent, useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { StoreItemProps } from "./StoreItem";
-import React from "react";
+
 
 const SearchBar = ({
   StoreItems,
@@ -12,7 +12,7 @@ const SearchBar = ({
   StoreItems: StoreItemProps[];
   setFiltredItems: (item: StoreItemProps[]) => void;
 }) => {
-  const [searchClue, setSearchClue] = useState<string | null>();
+  const [searchClue, setSearchClue] = useState<string>('');
   const [rangeValueStart, setRangeValueStart] = useState<number>(0);
   const [rangeValueEnd, setRangeValueEnd] = useState<number>(500);
   const [noMatchingProductMessage, setNoMatchingProductMessage] =
@@ -110,7 +110,7 @@ const SearchBar = ({
                   ></label>
                   <input
                     className="custom-range  hidden-mobile"
-                    onChange={handleRangeValue}
+                    onChange={() => {handleRangeValue}}
                     type="range"
                     id="rangeID"
                     min="25"
@@ -135,8 +135,8 @@ const SearchBar = ({
                   className="me-2 rounded-pill "
                   aria-label="Search"
                   value={searchClue}
-                  onChange={HasMatchingItems}
-                  icon={faSearch}
+                  onChange={() => {HasMatchingItems}}
+                 
                 />{" "}
                 <FontAwesomeIcon
                   icon={faSearch}

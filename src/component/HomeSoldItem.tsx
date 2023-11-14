@@ -2,6 +2,7 @@ import StoreItemsData from "../data/items.json";
 import { Card, Button } from "react-bootstrap";
 import RevealCompnenet from "../hooks/Reveal";
 import { StoreItemProps } from "./StoreItem";
+import React from "react";
 
 const HomeSoldItem = () => {
   const ItemSold: StoreItemProps = StoreItemsData[18];

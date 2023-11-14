@@ -1,7 +1,7 @@
 import { Container, Card, Col, Row, Button } from "react-bootstrap";
 import { useState } from "react";
 import RevealComponenet from '../hooks/Reveal';
-
+import React from "react";
 const Vote = () => {
   const [votePourcentageChoice1, SetVotePourcentageChoice1] =
     useState<number>(15);
@@ -11,7 +11,7 @@ const Vote = () => {
     useState<number>(25);
 
 
-  const [ isVotedFor ,setIsVotedFor ] = useState<boolean>(false);
+  const [ isVotedFor ] = useState<boolean>(false);
   
 
   

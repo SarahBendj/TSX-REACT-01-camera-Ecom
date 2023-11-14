@@ -3,6 +3,7 @@ import HomeStoreSection from "../component/HomeStoreSection";
 import HomePicturesSection from "../component/HomePicturesSection";
 import HomeBlogSection from "../component/HomeBlogsSection";
 import HomeSoldItem from "../component/HomeSoldItem";
+import React from "react";
 
 
 const Home = () => {

@@ -2,6 +2,8 @@ import { useContext, ReactNode, createContext, useState , useEffect } from "reac
 import storeData from '../data/items.json';
 import { StoreItemProps } from "../component/StoreItem";
 import useLocalStorage from "../hooks/useLocalStorage";
+import React from 'react';
+
 
 type ShoppingContextProps = {
   children: ReactNode;
@@ -113,7 +115,7 @@ useEffect(() => {
         }
       });
 
-      const sum: number = totalPrice.reduce((price, total) => price + total, 0).toFixed(2);
+      const sum: number = parseInt(totalPrice.reduce((price, total) => price + total, 0).toFixed(2),10);
       setAmountToPay(sum);
     } else {
       setAmountToPay(0);

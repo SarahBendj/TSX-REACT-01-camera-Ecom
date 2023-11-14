@@ -4,7 +4,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { UseShoppingContext } from "../Context/UseShoppingContext";
 import { StoreItemProps } from "./StoreItem";
 import { Link } from "react-router-dom";
-import {  useState } from "react";
+import React, { useState } from "react";
 
 type SlideBasketProps = {
   isBasketShowed: boolean;
@@ -160,7 +160,7 @@ const SlideBasket = ({
         <Button
           onClick={() => {
             handleSlideBasketCLOSE();
-            setTopayementPage(true);
+           
           }}
           variant="bg-transparent"
           style={{

@@ -1,10 +1,11 @@
 import Blogs from '../data/blogs.json';
 import BlogShape , {BlogProps} from '../component/BlogShape';
-import { Col , Row} from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
 import ImageLayer from '../../public/images/About.jpeg';
 import Vote from '../component/Vote';
 import '../App.scss';
+import React from 'react';
 
 
 //*COMPO

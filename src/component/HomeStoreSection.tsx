@@ -1,22 +1,21 @@
 import StoreItemsData from "../data/items.json";
-import { StoreItemProp } from "./StoreItem";
+import { StoreItemProps } from "./StoreItem";
 import { Card, Button } from "react-bootstrap";
 import RevealCompnenet from "../hooks/Reveal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { useRef ,RefObject, useEffect } from "react";
+import { useRef ,RefObject} from "react";
 import { UseShoppingContext } from '../Context/UseShoppingContext';
 import useNotification from "../hooks/Notification";
-
-
+import React from "react";
 
 //*TYPES
 type ScrollProps = {
-  delay :number
+  delay  :number
   scrollAmount :number
-  step: number
+  step : number
  };
 
 
@@ -27,48 +26,63 @@ const HomeStoreSection = () => {
   const { showSuccess } = useNotification();
   //* SETTINGS 
   const NewArrayOfBestSeller = StoreItemsData.slice(6, 15);
-  const elementRef : RefObject<HTMLElement> |null  = useRef(null)
-
-  const scrollToTheLeft = ({ delay = 10, scrollAmount = 50, step = 3 }: ScrollProps) => {
+  const elementRef: RefObject<HTMLDivElement> = useRef(null);
+  
+  const scrollToTheLeft = ({ delay = 10, scrollAmount = 50, step = 3 }: ScrollProps): void=> {
     const scrolling = () => {
+      if(elementRef.current){
       elementRef.current.scrollLeft -= scrollAmount;
       if (elementRef.current.scrollLeft > 0) {
         const screenWidth = window.innerWidth;
-        if (screenWidth > 600) {
-          step = 3;
-        } else {
-          step = 5; 
-        }
+
+        step = screenWidth > 600 ? 3 : 5;
         scrollAmount -= step; 
         if (scrollAmount < 0) {
           scrollAmount = 0;
         }
         setTimeout(scrolling, delay);
       }
+    }
     };
     scrolling();
   };
 
-  const scrollToTheRight = ({ delay = 10, scrollAmount = 50, step = 3 }) => {
+  const scrollToTheRight = ({ delay = 10, scrollAmount = 50, step = 3 }): void => {
     const scrolling = () => {
-      elementRef.current.scrollLeft += scrollAmount;
-      if (elementRef.current.scrollLeft < elementRef.current.scrollWidth - elementRef.current.clientWidth) {
-        scrollAmount -= step;
-        const screenWidth = window.innerWidth;
-        if (screenWidth > 600) {
-          step = 3;
-        } else {
-          step = 5; 
+      if (elementRef.current) {
+        elementRef.current.scrollLeft += scrollAmount;
+  
+        const canScroll =
+          elementRef.current.scrollLeft <
+          elementRef.current.scrollWidth - elementRef.current.clientWidth;
+  
+        if (canScroll) {
+          scrollAmount -= step;
+          const screenWidth = window.innerWidth;
+          step = screenWidth > 600 ? 3 : 5;
+  
+          if (scrollAmount < 0) {
+            scrollAmount = 0;
+          }
+  
+          setTimeout(scrolling, delay);
         }
-        if (scrollAmount < 0) {
-          scrollAmount = 0;
-        }
-        setTimeout(scrolling, delay);
       }
     };
+  
     scrolling();
   };
+  
+  const handleLeftScroll =() : void => {
 
+    const scrollProps: ScrollProps = { delay: 10, scrollAmount: 50, step: 3 };
+    scrollToTheLeft(scrollProps);
+  }
+  const handleRightScroll =() : void => {
+
+    const scrollProps: ScrollProps = { delay: 10, scrollAmount: 50, step: 3 };
+    scrollToTheRight(scrollProps);
+  }
 
 
   return (
@@ -97,12 +111,12 @@ const HomeStoreSection = () => {
             </div>
         </div>
         <div className="best-seller-items">
-          <Button className="bg-transparent border-0" onClick={scrollToTheLeft}>
+          <Button className="bg-transparent border-0" onClick={handleLeftScroll}>
             {" "}
             <FontAwesomeIcon className="arrow-scroll" icon={faArrowLeft} />{" "}
           </Button>
           <div ref={elementRef} className="best-seller-scroll">
-            {NewArrayOfBestSeller.map((item : StoreItemProp) => (
+            {NewArrayOfBestSeller.map((item : StoreItemProps) => (
               <Card key={item.id} 
               style={{ minWidth: "200px" }}>
                 <RevealCompnenet>
@@ -150,7 +164,7 @@ const HomeStoreSection = () => {
 
           <Button
             className="bg-transparent border-0"
-            onClick={scrollToTheRight}
+            onClick={handleRightScroll}
           >
             {" "}
             <FontAwesomeIcon
