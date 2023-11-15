@@ -61,7 +61,7 @@ const Navbar = () => {
           </div>
 
           {/* //*IF MOBILE MODE THEN DO THIS  */}
-          <NavMobileMenu >
+          <NavMobileMenu  >
               <Nav.Link to="/" as={NavLink} className="special-title nav-link">
             {" "}
             <h2>Home</h2>

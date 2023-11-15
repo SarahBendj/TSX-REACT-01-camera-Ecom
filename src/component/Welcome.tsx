@@ -6,6 +6,11 @@ const Welcome = () => {
   return (
    <div className='blob-wrapper'> 
       <div className='section_blob'>
+        <div className="project-title-mobile">
+        <h1 className=" special-title">
+              CAPTURA
+            </h1>
+        </div>
     <div className='blob'>
     <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
         <defs>

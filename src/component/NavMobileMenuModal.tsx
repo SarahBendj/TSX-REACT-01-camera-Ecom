@@ -30,6 +30,7 @@ const NavMobileMenu = ({ children } : ModalProps) => {
           position: "absolute",
           bottom: "30%",
           left: "0",
+          marginLeft : "-10%"
         }}
         onClick={handleShow}
         className="border-0"

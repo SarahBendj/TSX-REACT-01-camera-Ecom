@@ -10,7 +10,7 @@ const Payment = () => {
   })
 
   return(
-    <div className="SECTION">
+    <div className="payement">  <div className="SECTION">
       <h2 className="SECTION-title">Payment Confirmation</h2>
       <div className="SECTION-content">
 
@@ -24,6 +24,7 @@ const Payment = () => {
 
       <p>We appreciate your business and hope you enjoy your purchase.</p>
     </div>
+    </div>  
   );
 };
 

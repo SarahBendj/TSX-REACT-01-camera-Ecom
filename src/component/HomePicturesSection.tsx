@@ -26,7 +26,7 @@ const HomeBlogSection = () => {
     <div className="SECTION">
       <h2 className="SECTION-title">Boost your Carrer!</h2>
         <div className="SECTION-content ">
-          <div className="  best-seller">
+          <div className="best-seller">
             {" "}
             <div className="hidden-mobile">
             <h4  style={{ marginBottom: '2rem'}}>
@@ -45,7 +45,7 @@ const HomeBlogSection = () => {
 
             <div
               className="catalogue-pictures"
-              style={{ backgroundColor: "rgb(1, 3, 44 , 0.8)" }}
+              style={{ backgroundColor: "rgb(1, 3, 44 , 0.98)" }}
             >
               {pictureData.map((i) => (
                 <RevealComponent>
@@ -57,13 +57,8 @@ const HomeBlogSection = () => {
                     style={{ position: "relative" }}
                   >
                     <img
-                      className="mobile-picures-format"
-                      style={{
-                        height: "320px",
-                        width: "100%",
-                        marginBottom: "1rem",
-                        border: "1px white solid",
-                      }}
+                      className="picures-format"
+                     
                       src={i.img}
                     />
                      <p className={`slug ${imageIsHovered !== null && imageIsHovered ===i.id ? "slug-displayed special-title" : "slug-hidden"}`}>  {i.slug}</p>

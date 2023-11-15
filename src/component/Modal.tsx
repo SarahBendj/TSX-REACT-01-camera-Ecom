@@ -30,7 +30,7 @@ const MyModal = ({children , title , img , id} : ModalProps) => {
 
   return (
     <div >
-      <Button   style={{ backgroundColor:'white' , color:'#842E1B', position:'absolute' , bottom:'0', right: '0' }} onClick={handleShow} className='border-0'>
+      <Button   className='Modal-btn border-0 bg-light' variant="bg-light" onClick={handleShow} >
         More details
       </Button>
 

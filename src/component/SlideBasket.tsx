@@ -12,10 +12,8 @@ type SlideBasketProps = {
 };
 
 
-const SlideBasket = ({
-  isBasketShowed,
-  handleSlideBasketCLOSE,
-}: SlideBasketProps) => {
+const SlideBasket = ({ isBasketShowed, handleSlideBasketCLOSE}: SlideBasketProps) => {
+
   const {
     selectedItemsToBuy,
     amountToPay,

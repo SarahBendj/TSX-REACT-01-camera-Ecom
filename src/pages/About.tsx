@@ -29,7 +29,7 @@ const About = () => {
         </div>
 
         {/* BLOG ZONE */}
-        <div style={{  paddingLeft : '2rem'}} >
+        <div className='blog-container'  >
          
             <div className='blog-scroller'>
                 { Blogs.map((blog :BlogProps)=> (

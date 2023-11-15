@@ -3,6 +3,7 @@
 .App {
   font-family: stl.$regular-font;
   max-width: 100vw;
+ 
 }
 .menu-bars-mobile {
   display: none;
@@ -61,7 +62,10 @@
   width: 100vw;
   min-width : 100vw;
  
-  
+
+}
+.project-title-mobile {
+  display: none;
 }
 .welcome-text {
   transform: rotate(-5deg);
@@ -126,6 +130,9 @@
   height: 400px !important;
   
 }
+.blog-container {
+  padding-left: 2rem;
+}
 .home-blogs {
   position: absolute   ; 
   top: 50% ; 
@@ -155,6 +162,12 @@
 //*THIS INCLUDES  ALL COMPONENTS THAT PAGE 'STORE' USES
 .special-title {
   font-family: stl.$fontArt;
+} 
+.Modal-btn {
+  color:#842E1B;
+  position:absolute ;
+  bottom:0;
+  right: 0 ;
 }
 
 .SECTION{
@@ -205,24 +218,28 @@
  
    
 }
-.catalogue-picture:nth-child(7) {
-    min-width: 1000px;
-  }
-
-
+.picures-format {
+  border: #ccc 1px solid;
+  margin-bottom: 5%;
+  max-width: 800px;
+  max-height: 600px;
+}
 .slug {
-  padding: 0.5rem;
+  padding: 1rem;
   position: absolute;
+  box-sizing: border-box;
+  font-size: 1.5rem;
   bottom: 0;
   color: white;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.6);
   &-displayed  {
-  transform: translateY(0);
+  transform: translateY(-40%);
   opacity: 1;
   }
 
   &-hidden{
+    font-family: stl.$fontArt;
     opacity: 0;
     transform: translateY(-50%);
     transition: 1.5s;
@@ -406,6 +423,9 @@
 .modal-content {
   padding: 16px;
 }
+.payement {
+  height: 60vh;
+}
 
 //************************************/******************************///////
 //*FOOTER
@@ -471,6 +491,7 @@
     max-width: 100vw;
     width: 100vw;
     overflow-x: hidden;
+    
   }
   .welcome-image-container {
     position: relative;
@@ -491,11 +512,8 @@
 
   .SECTION{
     font-size: 0.8rem;
-    
-    margin: 1rem ;
-   
+    padding: 1rem;
       
-    
     &-content {
       margin-top: 2rem;
       margin : 1rem;
@@ -518,6 +536,48 @@
       display: block;
 
   }
+  
+  .best-seller-scroll {
+    overflow-x: auto; 
+    overflow-y: hidden;
+    white-space: nowrap; 
+    -webkit-overflow-scrolling: touch; 
+    overscroll-behavior: auto; 
+    transition: 5s;
+  }
+  .arrow-scroll {
+    display: none;
+  }
+  
+  .SECTION {
+    margin: 0;
+    &-content {
+    margin: 0;
+    padding: 0;
+  }
+
+}
+.show-mobile {
+  padding-top: 2rem;
+}
+.picures-format {
+  height: 200px;
+  width: 250px;
+}
+.logo-name {
+  display : none;
+}
+.project-title-mobile {
+  
+  display: block;
+  font-size: 3px;
+  position: absolute;
+  bottom: 80%;
+  color: #f5f5f5;
+ 
+  
+}
+
   .home-blogs {
     position: relative;
     width:100%;
@@ -561,7 +621,10 @@
       cursor: pointer;
     }
   }
-  
+  .Modal-btn {
+    bottom:50%;
+    right: 0 ;
+  } 
   .hidden-mobile {
   display: none;
   }
@@ -587,15 +650,36 @@
     padding-top: 1rem;
 
   }
-  .footer-wrapper {
-    padding-top: 2rem;
-    background-color: white;
-    height: fit-content;
-    font-size: 1.2rem;
+  .catalogue-pictures{
+    padding: 1rem 0 0 0;
+    
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+     
+  }
+  .blog-container {
+    padding: 0;
+    margin: - 1rem;
+  }
+  .footer-wrapper {
+    height: fit-content;
+  }
+  .footer-service-client {
+    padding : 2rem;
+    font-size: 1.2rem;
+    display: block;
+    margin: auto;
+    & ul {
+      padding: 1rem;
+      border-bottom:  1px solid gray;
+    }
+ 
+  }
+  .footer-social-media {
+    width: 100vw;
   }
   .camera_blob {
     display: none;
@@ -607,7 +691,33 @@
     height: 50vh;
     padding-bottom: 5%;
   ;}
+  .slug {
+  padding: 1rem;
+  position: absolute;
+  box-sizing: border-box;
+  font-size: 1rem;
+  bottom: 0;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  &-displayed  {
+  transform: translateY(0%);
+  opacity: 1;
+  }
+
+  &-hidden{
+    font-family: stl.$fontArt;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: 1.5s;
+
   
+}}
+
+.ticket-payement-detail {
+  padding-top: 5rem;
+  
+}
 
   
 }
