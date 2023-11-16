@@ -14,7 +14,6 @@ const useNotification = () => {
     notyf.open({
       type: type,
       message: message,
-      background : 'rgba(1,150,44,0.8)',
       duration: 2500,
       position: {
         x: 'right',

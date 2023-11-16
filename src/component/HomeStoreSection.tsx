@@ -1,6 +1,6 @@
 import StoreItemsData from "../data/items.json";
 import { StoreItemProps } from "./StoreItem";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button} from "react-bootstrap";
 import RevealCompnenet from "../hooks/Reveal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -118,37 +118,44 @@ const HomeStoreSection = () => {
           <div ref={elementRef} className="best-seller-scroll">
             {NewArrayOfBestSeller.map((item : StoreItemProps) => (
               <Card key={item.id} 
-              style={{ minWidth: "200px" }}>
+              style={{ minWidth: "200px" , maxWidth :"240px" }}>
                 <RevealCompnenet>
                   <Card.Img
+                  
                     variant="top "
                     src={item.img}
                     height="200px"
                     style={{ objectFit: "cover" }}
-                  />  <Button  onClick={ ()=> {
+                  />  
+                </RevealCompnenet>
+                <Card.Body className=" d-flex card-store-home-section">
+                  <RevealCompnenet>
+                    {" "}
+
+                    <Card.Title className="d-flex flex-column align-items-start">
+                  
+                        <RevealCompnenet>
+                        <div className='fs-5 '> {item.name}</div>{" "}
+                      </RevealCompnenet>
+                      
+                      <RevealCompnenet>
+                        {" "}
+                        <div>
+                        <span className=" fs-6 fw-bold">{item.price} $ </span>{" "}
+                        <Button  onClick={ ()=> {
                      increaseItemsQuantity(item.id)  
                     showSuccess(`Model ${item.name} has been successfully added to your cart `)
                   }}
 
-                   className='bg-transparent border-0 hovered' 
-                   style={{ color : 'rgb(15, 15, 144)'  ,
-                    padding: '-1rem' ,scale:'1.5'}}>
+                   className='bg-transparent border-0 hovered ' 
+                   style={{ color : 'rgb(15, 15, 144)'  , scale:'1.2'}}>
                       <FontAwesomeIcon  icon={faShoppingCart} />
                       </Button>
-                </RevealCompnenet>
-                <Card.Body className=" d-flex flex-column">
-                  <RevealCompnenet>
-                    {" "}
-                    <Card.Title className="d-flex justify-content-space-between align-items-baseline">
-                      <RevealCompnenet>
-                        {" "}
-                        <span className='fs-4'  >{item.name}</span>{" "}
+                      </div>
+                          
                       </RevealCompnenet>
-                      <RevealCompnenet>
-                        {" "}
-                        <span className="ms-2"> {item.price} $ </span>{" "}
-                       
-                      </RevealCompnenet>
+                      
+                   
                     </Card.Title>{" "}
                   </RevealCompnenet>
                   <RevealCompnenet>

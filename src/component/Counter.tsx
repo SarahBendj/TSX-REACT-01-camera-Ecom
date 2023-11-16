@@ -32,10 +32,9 @@ const Counter = ( { id  , name} : CounterProps ) => {
       showSuccess(`Model ${name} has been successfully added `)}}> + </Button>
         <Button  variant="transparent" className="btn-outline-dark" onClick={()=> {decreaseItemsQuantity(id)}}> - </Button>
         <Button
-         
-          variant="warning"
-          onClick={() => {removeItems(id) ;  showSuccess(`Model ${name} has been successfully added `)}}
-          className="border-0"
+          className="btn btn-outline-warning"
+          variant="transparent"
+          onClick={() => {removeItems(id) ;  showSuccess(`Model ${name} removed `)}}
           style={{ marginLeft: '1rem'}}
         >
           Remove
